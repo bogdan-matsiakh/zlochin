@@ -98,7 +98,6 @@ parser = (function () {
     }
 })();
 
-
 function say(attr) {
     console.log(attr)
 }
