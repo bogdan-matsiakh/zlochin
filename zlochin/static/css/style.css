@@ -1,16 +1,14 @@
 body {
-	background-color: #EEE;	
+	background-color: #EEE;
+	overflow-y: scroll;	
 }
-<<<<<<< HEAD
 body.show-discus #disqus_thread {
 	top: 0%;
 }
 body.show-discus #toggle_discus {
-	background-color:#CCCCCC;
+	color:#ffe;
+	background-color:#0a0;
 }
-=======
-
->>>>>>> 469277d5d19c901ead8fd357cd93bc92234e0f53
 .main {
 
 }
@@ -87,4 +85,5 @@ body.show-discus #toggle_discus {
 	z-index: 1;
 	border: 1px solid #999;
 	border-radius: 3px;
+	background-color: #FFE;
 }
