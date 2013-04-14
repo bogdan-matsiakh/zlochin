@@ -43,9 +43,4 @@ mapWorker = (function () {
             _show(data);
         }
     }
-})()
-
-
-function say(attr) {
-    console.log(attr)
-}
+})();
