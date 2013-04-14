@@ -1,12 +1,16 @@
 body {
 	background-color: #EEE;	
 }
+<<<<<<< HEAD
 body.show-discus #disqus_thread {
 	top: 0%;
 }
 body.show-discus #toggle_discus {
 	background-color:#CCCCCC;
 }
+=======
+
+>>>>>>> 469277d5d19c901ead8fd357cd93bc92234e0f53
 .main {
 
 }
@@ -34,6 +38,26 @@ body.show-discus #toggle_discus {
 	font-size: 12px;
 	margin: 0px 1%;
 }
+
+#accordion a {
+	line-height: 20px;
+	padding: 3px;
+}
+
+#accordion a.selected {
+	background: #0A0;
+	color: white;
+	text-decoration: none;
+}
+
+#accordion .margin-bottom {
+	margin-bottom: 5px;
+}
+
+#accordion .margin-left {
+	margin-left: 20px;
+}
+
 #templates {
 	display :none;
 }

@@ -54,40 +54,70 @@ parser = (function () {
             _items = items;
             _createMenu();
         },
+        _getItemHash = function (item) {
+        	return item.styleID + "-" + item.templID + "-" + item.colName;
+        },
         _createMenu = function () {
-            $.each(_items, function (itemName, item) {
-                var itemH = $("<h3>", {
-                	text: itemName
-                }).appendTo(_controls.accordion);
-                var itemDiv = $("<div>").appendTo(_controls.accordion);
-                $.each(item, function(item2Name, item2){
+        	var urlHash = hrefHelper.getHash(), // For later url dispatching
+        		itemIndex = 0;
+            $.each(_items, function (item1Name, item1) {
+                var item1H = $("<h3>", {
+		            	text: item1Name
+		            }).appendTo(_controls.accordion),
+                	item1Div = $("<div>").appendTo(_controls.accordion);
+                $.each(item1, function(item2Name, item2){
                 	if (item2.colName) {
-                		var item2A = $("<a>", {
-                			text: item2Name,
-                			href: 'javascript: void(0);'
-                		}).appendTo(itemDiv);
-                		$("<br>").appendTo(itemDiv);
+                		var item2Hash = _getItemHash(item2),
+		            		item2A = $("<a>", {
+		            			text: item2Name,
+		            			href: "#" + item2Hash
+		            		}).appendTo($("<div>").appendTo(item1Div));
                 		
                 		$(item2A).click(function(){
-                			mapWorker.show(item2);
+                			_clickMenu(item2A, item2);
                 		});
+                		
+	            		if ((urlHash == item2Hash) || (itemIndex === 0)) {
+		            		$(item2A).click();
+	            		}
+	            		
+	            		itemIndex++;
                 	}
                 	else {
-                		var item2Div = $("<div>").appendTo(itemDiv);
+                		$("<div>", {
+                			text: item2Name,
+                			'class': 'margin-bottom'
+                		}).appendTo(item1Div);
+                		var item2Div = $("<div>").appendTo(item1Div);
 		                $.each(item2, function(item3Name, item3){
-		                	var item3A = $("<a>", {
-		            			text: item3Name,
-		            			href: 'javascript: void(0);'
-		            		}).appendTo(item2Div);
-		            		$("<br>").appendTo(item2Div);
+		                	var item3Hash = _getItemHash(item3),
+				            	item3A = $("<a>", {
+				        			text: item3Name,
+				        			href: "#" + item3Hash,
+				        			'class': 'margin-left'
+				        		}).appendTo($("<div>").appendTo(item2Div));
 		            		
 		            		$(item3A).click(function(){
-		            			mapWorker.show(item3);
+		            			_clickMenu(item3A, item3);
 		            		});
+		            		
+		            		if ((urlHash == item3Hash) || (itemIndex === 0)) {
+			            		$(item3A).click();
+		            		}
+		            		
+		            		itemIndex++;
 		                });
+		                $("<div>", {
+                			'class': 'margin-bottom'
+                		}).appendTo(item1Div);
                 	}
                 });
             });
+        },
+        _clickMenu = function(el, data) {
+        	mapWorker.show(data);
+        	$("a", _controls.accordion).removeClass("selected");
+        	$(el).addClass("selected");
         },
         _init = function () {
             _controls.accordion = $("#accordion");

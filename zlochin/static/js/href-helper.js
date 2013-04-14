@@ -1,10 +1,10 @@
 hrefHelper = (function(){
-	var _change = function(hash) {
+	var _getHash = function(hash) {
 			var oldHref = window.location.href;
-			window.location.href = oldHref.substr(0, oldHref.indexOf("#")) + "#" + hash;
+			return oldHref.substr(oldHref.indexOf("#") + 1);
 		};
 	
 	return {
-		change: _change
+		getHash: _getHash
 	};
 })();

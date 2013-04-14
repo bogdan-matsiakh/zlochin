@@ -1,18 +1,8 @@
 function loadList(data) {
 	parser.parse(data);
-	$( "#accordion" ).accordion({
-    	heightStyle: "fill"
+	$("#accordion").accordion({
+    	heightStyle: "content"
     });
-    $( "#accordion-resizer" ).resizable({
-		minHeight: 140,
-		minWidth: 200,
-		resize: function() {
-			$("#accordion").accordion({
-				heightStyle: 'content'
-			});
-		}
-    });
-    $('input').button();
 }
 
 // <=== ENTRY POINT :)
@@ -30,9 +20,4 @@ $(function() {
 	})
 	
 	parser.init();
-	mapWorker.show({
-		colName: 'col210',
-		styleID: 3,
-		templID: 4
-	});
 });
