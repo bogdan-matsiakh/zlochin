@@ -4,7 +4,7 @@
 		<title>Zloch.in.ua</title>
 		
 		<link rel="styylesheet" href="../static/css/style.css" />
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 		
 		<script type="text/javascript" src="../static/js/script.js" ></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js" ></script>
@@ -17,6 +17,16 @@
 		<script type="text/javascript">
 			function loadList(data) {
 				parser.parse(data);
+				$( "#accordion" ).accordion({
+			    	heightStyle: "fill"
+			    });
+			    $( "#accordion-resizer" ).resizable({
+					minHeight: 140,
+					minWidth: 200,
+					resize: function() {
+						$( "#accordion" ).accordion( "refresh" );
+					}
+			    });
 			}
 			
 			$(function() {
@@ -25,8 +35,6 @@
 				
 				// Retrieve categories list
 				$.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/od6/public/values?alt=json-in-script&callback=loadList');
-				
-				$('#accordion').accordion();
 				
 				parser.init();
 				
@@ -104,9 +112,7 @@
 				<div class="map" id="map"></div>
 			</div>
 			<div class="right-col">
-				<div id="accordion">
-					
-				</div>
+				<div id="accordion"></div>
 			</div>
 		</div>
 		

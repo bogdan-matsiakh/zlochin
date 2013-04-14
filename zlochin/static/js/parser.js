@@ -62,13 +62,14 @@ parser = (function () {
                 obj;
                                 
             for (property in _items) {
-                say(property)
                 if (_items.hasOwnProperty(property)) {
                     elem = header.clone().text(property); 
                     elem.appendTo(_controls.accordion);
+                    $(_controls.accordion).append(content.clone());
                     obj = {
                         title :property,
-                        dom : elem
+                        dom : elem,
+                        children : []
                     };
                     _menus.push(obj);
                     _createSubmenu(obj)
@@ -76,10 +77,22 @@ parser = (function () {
             }
         },
         _createSubmenu = function (menu) {
+            say('in create submenu');
             var title = $("<h4>"),
+                elem,
+                obj;
                 
-            
-            _items[menu.title]
+            for (property in _items[menu.title]) {
+                say('submenu property: ' + property)
+                elem = title.clone().text(property);
+                $(menu.dom).next().append(elem);
+                obj = {
+                    title :property,
+                    dom : elem,
+                    children : []
+                }
+                menu.children.push(obj)
+            }
         },
         _init = function () {
             _controls = {
