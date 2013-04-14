@@ -24,30 +24,32 @@ parser = (function () {
                 if (cat2) cat2 = cat2.$t;
                 if (cat3) cat3 = cat3.$t;
                 
-                item = {
-                    templID: templID,
-                    styleID: styleID,
-                    colName: colName
-                };
-                
-                if (cat1) {
-                    if (!items[cat1]) {
-                        items[cat1] = {};
-                    }
-                    if (cat2) {
-                        if (!items[cat1][cat2]) {
-                            items[cat1][cat2] = {};
-                        }
-                        if (cat3) {
-                            items[cat1][cat2][cat3] = item;
-                        }
-                        else {
-                            items[cat1][cat2] = item;
-                        }
-                    }
-                    else {
-                        items[cat1] = item;
-                    }
+                if (active == 1) {
+		            item = {
+		                templID: templID,
+		                styleID: styleID,
+		                colName: colName
+		            };
+		            
+		            if (cat1) {
+		                if (!items[cat1]) {
+		                    items[cat1] = {};
+		                }
+		                if (cat2) {
+		                    if (!items[cat1][cat2]) {
+		                        items[cat1][cat2] = {};
+		                    }
+		                    if (cat3) {
+		                        items[cat1][cat2][cat3] = item;
+		                    }
+		                    else {
+		                        items[cat1][cat2] = item;
+		                    }
+		                }
+		                else {
+		                    items[cat1] = item;
+		                }
+		            }
                 }
             });
             _items = items;
