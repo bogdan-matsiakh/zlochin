@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-import xlrd
+#import xlrd
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Q
@@ -24,7 +24,7 @@ from django.conf import settings
 
 
 def list(request):
-    print xlrd
+  #  print xlrd
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         
