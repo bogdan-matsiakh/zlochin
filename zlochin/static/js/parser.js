@@ -57,7 +57,7 @@ parser = (function () {
             _createMenu();
         },
         _createMenu = function () {
-            say('createmenu')
+           // say('createmenu')
             var header = $("<h3>"),
                 content = $('<div>'),
                 elem,
@@ -79,21 +79,26 @@ parser = (function () {
             }
         },
         _createSubmenu = function (menu) {
-            say('in create submenu');
-            var title = $("<h4>"),
+         //   say('in create submenu');
+            var header = $("<h4>"),
+                item = $("#templates").find('.radio'),
                 elem,
                 obj;
                 
             for (property in _items[menu.title]) {
-                say('submenu property: ' + property)
-                elem = title.clone().text(property);
+                //say('submenu property: ' + property);
+                if (property.colName) {
+                    elem = header.clone().text(property);
+                } else {
+                    elem = item.clone().text(property);
+                }
                 $(menu.dom).next().append(elem);
                 obj = {
                     title :property,
                     dom : elem,
                     children : []
                 }
-                menu.children.push(obj)
+                menu.children.push(obj);
             }
         },
         _init = function () {
