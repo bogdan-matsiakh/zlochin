@@ -12,50 +12,58 @@
 		
 		<script src="http://maps.google.com/maps/api/js?sensor=false&language=uk" type="text/javascript"></script>
 		
-		<script type="text/javascript" src="../static/js/parser.js"></script>
+		<!--script type="text/javascript" src="../static/js/parser.js"></script-->
 		
 		<script type="text/javascript">
-			var menuItems = {
-				"Зареєстровані злочини": {
-					"усього": {
-						"торік": {
-							styleID: 1,
-							templID: 1,
-							colName: "col1\x3e\x3e1"
-						},
-						"поточний рік": {
-							styleID: 1,
-							templID: 1,
-							colName: "col2\x3e\x3e1"
-						},
-						"динаміка, %": {
-							styleID: 1,
-							templID: 1,
-							colName: "col3\x3e\x3e1"
+			function loadList(data) {
+				var entries = data.feed.entry,
+					items = {};
+				$.each(entries, function(index, entry){
+					var templID = entry.gsx$templid,
+						colName = entry.gsx$colname,
+						styleID = entry.gsx$styleid,
+						active = entry.gsx$active,
+						cat1 = entry.gsx$cat1,
+						cat2 = entry.gsx$cat2,
+						cat3 = entry.gsx$cat3,
+						item = null;
+					
+					if (templID) templID = templID.$t;
+					if (colName) colName = colName.$t;
+					if (styleID) styleID = styleID.$t;
+					if (active) active = active.$t;
+					if (cat1) cat1 = cat1.$t;
+					if (cat2) cat2 = cat2.$t;
+					if (cat3) cat3 = cat3.$t;
+					
+					item = {
+						templID: templID,
+						styleID: styleID,
+						colName: colName
+					};
+					
+					if (cat1) {
+						if (!items[cat1]) {
+							items[cat1] = {};
 						}
-					},
-					"тяжких та особливо тяжких": {
-						"торік": {
-							styleID: 1,
-							templID: 1,
-							colName: "col1\x3e\x3e1"
-						},
-						"поточний рік": {
-							styleID: 1,
-							templID: 1,
-							colName: "col2\x3e\x3e1"
-						},
-						"динаміка, %": {
-							styleID: 1,
-							templID: 1,
-							colName: "col3\x3e\x3e1"
+						if (cat2) {
+							if (!items[cat1][cat2]) {
+								items[cat1][cat2] = {};
+							}
+							if (cat3) {
+								items[cat1][cat2][cat3] = item;
+							}
+							else {
+								items[cat1][cat2] = item;
+							}
+						}
+						else {
+							items[cat1] = item;
 						}
 					}
-				}
-			};
-			
-			function loadList(data) {
-				parser.parse(data)
+				});
+				
+				parser.parse(items);
 			}
 			
 			$(function() {
