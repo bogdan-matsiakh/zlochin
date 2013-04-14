@@ -1,6 +1,12 @@
 body {
 	background-color: #EEE;	
 }
+body.show-discus #disqus_thread {
+	top: 0%;
+}
+body.show-discus #toggle_discus {
+	background-color:#CCCCCC;
+}
 .main {
 
 }
@@ -11,7 +17,7 @@ body {
 }
 
 .right-col {
-	width: 29%;
+	width: 30%;
 	float: right;
 }
 
@@ -23,11 +29,38 @@ body {
 }
 
 #accordion {
-	width: 100%;
+	width: 98%;
 	float: right;
 	font-size: 12px;
-	margin-right: 3px;
+	margin: 0px 1%;
 }
 #templates {
 	display :none;
+}
+
+#disqus_thread {
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	padding: 0%;
+	width: 70%;
+	height: 100%;
+	overflow:hidden;
+	background-color:#EEE;
+	
+	transition:top 1s;
+	-webkit-transition:top 1s;
+	-o-transition:top 1s;
+	-moz-transition:top 1s;
+
+}
+
+#toggle_discus {
+	position:absolute;
+	right:30%;
+	bottom:0%;
+	width:100px;
+	z-index: 1;
+	border: 1px solid #999;
+	border-radius: 3px;
 }
