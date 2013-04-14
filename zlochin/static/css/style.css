@@ -30,3 +30,6 @@ body {
 	font-size: 12px;
 	margin-right: 3px;
 }
+#templates {
+	display :none;
+}

@@ -62,11 +62,9 @@ parser = (function () {
                 content = $('<div>'),
                 elem,
                 obj;
+            _menus[0] = []
             $.each(_items, function (key, value) {
-                say('key');
-                say(key);
-                say('value');
-                say(value);
+               
                 elem = header.clone().text(key); 
                 elem.appendTo(_controls.accordion);
                 $(_controls.accordion).append(content.clone());
@@ -76,12 +74,14 @@ parser = (function () {
                     dom : elem,
                     children : []
                 };
-                _menus.push(obj);
+                _menus[0].push(obj);
                  
             });
-            _createSubmenu()
+            for (var i = 0; i < _menus[0].length; i += 1) {
+                _createSubmenu(i);
+            } 
         },
-        _createSubmenu = function (menu, js) {
+        _createSubmenu = function (id) {
             var header = $("<h4>"),
                 template = $("#templates").find('.radiobutton'),
                 input,
@@ -89,13 +89,9 @@ parser = (function () {
                 elem,
                 obj,
                 i, max;
+            say(_menus);
             _menus[1] = [];
-            
-            $.each(_menus, function (key, value) {
-                say('key');
-                say(key);
-                say('value');
-                say(value);
+            $.each(_menus[0][id].obj, function (key, value) {
                 if (value.colName) {
                     item = template.clone();
                     item.find('label').text(key);
@@ -105,50 +101,48 @@ parser = (function () {
                     item.click(function () {
                         mapWorker.show(key) 
                     });
-                    $(menu.dom).after(item);
+                    $(_menus[0][id].dom).next().append(item);
                     return false;
                 } else {
                     say('else')
                     item = header.clone().text(key);
-                    $(menu.dom).after(item);
+                    $(_menus.dom).after(item);
                     obj = {
                         title :key,
                         obj : value,
                         dom : item,
                         children : []
                     };
-                    _createSubmenu(value, obj);
+                    _menus[1].push(obj);
+                  //  _createSubmenu(value, obj);
                 }
             });
-            
-            
-            /*
-            $.each(_menus, function (key, value) {
-                say('sub key');
-                say(key);
-                say('sub value');
-                say(value);
-                if (typeof value != 'object') {
-                    return;
-                }
-                if (value.colName || value.styleID || value.templID) {
-                    say('in');
-                    elem = item.clone();
-                    
-                    elem.find('label').text(key);
-                    elem.find('label').attr('for', key);
-                    elem.find('input').attr('id', key);
+            for (var i = 0; i < _menus[1].length; i += 1) {
+                _createSubSubmenu(i);
+            } 
+        },
+        _createSubSubmenu = function (id) {
+            var header = $("<h4>"),
+                template = $("#templates").find('.radiobutton'),
+                input,
+                label,
+                elem,
+                obj,
+                i, max;
+            say(_menus);
+            _menus[1] = [];
+            $.each(_menus[1][id].obj, function (key, value) {
+                    item = template.clone();
+                    item.find('label').text(key);
+                    item.find('label').attr('for', key);
+                    item.find('input').attr('id', key);
                     //elem = elem.html();
-                    elem.click(function () {
+                    item.click(function () {
                         mapWorker.show(key) 
                     });
-                } else {
-                    say('else')
-                    elem = header.text(key);
-                }
-                
+                    $(_menus[1][id].dom).next().append(item);
+                    return false;
             });
-            */
         },
         _init = function () {
             _controls = {
