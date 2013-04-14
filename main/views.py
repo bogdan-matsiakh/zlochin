@@ -12,6 +12,24 @@ from django.core.urlresolvers import reverse
 from main.models import Document
 from main.forms import DocumentForm
 
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from .forms import UploadFileForm
+from .models import ModelWithFileField
+
+def list(request):
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = ModelWithFileField(file_field=request.FILES['file'])
+            instance.save()
+            return HttpResponseRedirect('/')
+    else:
+        form = UploadFileForm()
+    return render(request, 'upload.html', {'form': form})
+
+'''
+
 def list(request):
     # Handle file upload
     if request.method == 'POST':
@@ -34,7 +52,7 @@ def list(request):
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
-
+'''
 
 def index(request):
     return render_to_response('index.html')
