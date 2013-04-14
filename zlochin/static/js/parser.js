@@ -2,7 +2,6 @@ parser = (function () {
     var _controls = {}, 
         _items,
         _menus = [],
-       
         _parse = function (data) {
             var entries = data.feed.entry,
                 items = {};
@@ -53,111 +52,49 @@ parser = (function () {
                 }
             });
             _items = items;
-            say(_items)
             _createMenu();
         },
         _createMenu = function () {
-           // say('createmenu')
-            var header = $("<h3>"),
-                content = $('<div>'),
-                elem,
-                obj;
-            $.each(_items, function (key, value) {
-                say('key');
-                say(key);
-                say('value');
-                say(value);
-                elem = header.clone().text(key); 
-                elem.appendTo(_controls.accordion);
-                $(_controls.accordion).append(content.clone());
-                obj = {
-                    title :key,
-                    obj : value,
-                    dom : elem,
-                    children : []
-                };
-                _menus.push(obj);
-                 
+            $.each(_items, function (itemName, item) {
+                var itemH = $("<h3>", {
+                	text: itemName
+                }).appendTo(_controls.accordion);
+                var itemDiv = $("<div>").appendTo(_controls.accordion);
+                $.each(item, function(item2Name, item2){
+                	if (item2.colName) {
+                		var item2A = $("<a>", {
+                			text: item2Name,
+                			href: 'javascript: void(0);'
+                		}).appendTo(itemDiv);
+                		$("<br>").appendTo(itemDiv);
+                		
+                		$(item2A).click(function(){
+                			mapWorker.show(item2);
+                		});
+                	}
+                	else {
+                		var item2Div = $("<div>").appendTo(itemDiv);
+		                $.each(item2, function(item3Name, item3){
+		                	var item3A = $("<a>", {
+		            			text: item3Name,
+		            			href: 'javascript: void(0);'
+		            		}).appendTo(item2Div);
+		            		$("<br>").appendTo(item2Div);
+		            		
+		            		$(item3A).click(function(){
+		            			mapWorker.show(item3);
+		            		});
+		                });
+                	}
+                });
             });
-            _createSubmenu()
-        },
-        _createSubmenu = function (menu, js) {
-            var header = $("<h4>"),
-                template = $("#templates").find('.radiobutton'),
-                input,
-                label,
-                elem,
-                obj,
-                i, max;
-            _menus[1] = [];
-            
-            $.each(_menus, function (key, value) {
-                say('key');
-                say(key);
-                say('value');
-                say(value);
-                if (value.colName) {
-                    item = template.clone();
-                    item.find('label').text(key);
-                    item.find('label').attr('for', key);
-                    item.find('input').attr('id', key);
-                    //elem = elem.html();
-                    item.click(function () {
-                        mapWorker.show(key) 
-                    });
-                    $(menu.dom).after(item);
-                    return false;
-                } else {
-                    say('else')
-                    item = header.clone().text(key);
-                    $(menu.dom).after(item);
-                    obj = {
-                        title :key,
-                        obj : value,
-                        dom : item,
-                        children : []
-                    };
-                    _createSubmenu(value, obj);
-                }
-            });
-            
-            
-            /*
-            $.each(_menus, function (key, value) {
-                say('sub key');
-                say(key);
-                say('sub value');
-                say(value);
-                if (typeof value != 'object') {
-                    return;
-                }
-                if (value.colName || value.styleID || value.templID) {
-                    say('in');
-                    elem = item.clone();
-                    
-                    elem.find('label').text(key);
-                    elem.find('label').attr('for', key);
-                    elem.find('input').attr('id', key);
-                    //elem = elem.html();
-                    elem.click(function () {
-                        mapWorker.show(key) 
-                    });
-                } else {
-                    say('else')
-                    elem = header.text(key);
-                }
-                
-            });
-            */
         },
         _init = function () {
-            _controls = {
-                accordion : $("#accordion")
-            }
+            _controls.accordion = $("#accordion");
         };
     return {
-        parse :_parse,
-        init : _init
+        parse: _parse,
+        init: _init
     }
 })();
 

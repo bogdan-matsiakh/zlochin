@@ -7,7 +7,9 @@ function loadList(data) {
 		minHeight: 140,
 		minWidth: 200,
 		resize: function() {
-			$( "#accordion" ).accordion( "refresh" );
+			$("#accordion").accordion({
+				heightStyle: 'content'
+			});
 		}
     });
     $('input').button();
