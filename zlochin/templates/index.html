@@ -13,6 +13,7 @@
 		<script src="http://maps.google.com/maps/api/js?sensor=false&language=uk" type="text/javascript"></script>
 		
 		<script type="text/javascript" src="../static/js/parser.js"></script>
+		<script type="text/javascript" src="../static/js/map-worker.js"></script>
 		
 		<script type="text/javascript">
 			function loadList(data) {
@@ -30,45 +31,15 @@
 			}
 			
 			$(function() {
-				var map = null,
-					layer = null;
-				
-				// Retrieve categories list
+			
 				$.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/od6/public/values?alt=json-in-script&callback=loadList');
 				
 				parser.init();
-				
-				(function initMap() {
-					map = new google.maps.Map(document.getElementById('map'), {
-						center: new google.maps.LatLng(46.918844877014486, 30.76445803124999),
-						zoom: 6,
-						mapTypeId: google.maps.MapTypeId.ROADMAP
-					});
-
-					layer = new google.maps.FusionTablesLayer({
-						map: map,
-						heatmap: { enabled: false },
-						query: {
-							select: "col2\x3e\x3e1",
-							from: "1w0ufexIfgcSjm21d9EM2qICIa6jsyRM4ihHPE6o",
-							where: ""
-						},
-						options: {
-							styleId: 2,
-							templateId: 1
-						}/*,
-						styles: [{
-								polygonOptions: {
-									fillColor: '#FF0000',
-									fillOpacity: 0.1,
-									strokeColor: '#0000FF',
-									strokeOpacity: 0.1,
-									strokeWeight: 1.0
-								}
-							}
-						]*/
-					});
-				})();
+				mapWorker.show({
+					colName: "col2\x3e\x3e1",
+					styleID: 2,
+					templID: 1
+				});
 			});
 		</script>
 		
