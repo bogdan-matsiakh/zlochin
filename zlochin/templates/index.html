@@ -4,7 +4,7 @@
 		<title>Zloch.in.ua</title>
 		
 		<link rel="styylesheet" href="../static/css/style.css" />
-		<link rel="styylesheet" href="http://code.jquery.com/ui/1.10.2/themes/sunny/jquery-ui.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 		
 		<script type="text/javascript" src="../static/js/script.js" ></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js" ></script>
@@ -12,58 +12,11 @@
 		
 		<script src="http://maps.google.com/maps/api/js?sensor=false&language=uk" type="text/javascript"></script>
 		
-		<!--script type="text/javascript" src="../static/js/parser.js"></script-->
+		<script type="text/javascript" src="../static/js/parser.js"></script>
 		
 		<script type="text/javascript">
 			function loadList(data) {
-				var entries = data.feed.entry,
-					items = {};
-				$.each(entries, function(index, entry){
-					var templID = entry.gsx$templid,
-						colName = entry.gsx$colname,
-						styleID = entry.gsx$styleid,
-						active = entry.gsx$active,
-						cat1 = entry.gsx$cat1,
-						cat2 = entry.gsx$cat2,
-						cat3 = entry.gsx$cat3,
-						item = null;
-					
-					if (templID) templID = templID.$t;
-					if (colName) colName = colName.$t;
-					if (styleID) styleID = styleID.$t;
-					if (active) active = active.$t;
-					if (cat1) cat1 = cat1.$t;
-					if (cat2) cat2 = cat2.$t;
-					if (cat3) cat3 = cat3.$t;
-					
-					item = {
-						templID: templID,
-						styleID: styleID,
-						colName: colName
-					};
-					
-					if (cat1) {
-						if (!items[cat1]) {
-							items[cat1] = {};
-						}
-						if (cat2) {
-							if (!items[cat1][cat2]) {
-								items[cat1][cat2] = {};
-							}
-							if (cat3) {
-								items[cat1][cat2][cat3] = item;
-							}
-							else {
-								items[cat1][cat2] = item;
-							}
-						}
-						else {
-							items[cat1] = item;
-						}
-					}
-				});
-				
-				//parser.parse(items);
+				parser.parse(data);
 			}
 			
 			$(function() {
@@ -73,12 +26,11 @@
 				// Retrieve categories list
 				$.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/od6/public/values?alt=json-in-script&callback=loadList');
 				
-				$("#categories input[type=radio]").change(function(){
-					//var url = $("#categories input[type=radio]:checked").attr("url");
-					initMap();
-				});
+				$('#accordion').accordion();
 				
-				function initMap() {
+				parser.init();
+				
+				(function initMap() {
 					map = new google.maps.Map(document.getElementById('map'), {
 						center: new google.maps.LatLng(46.918844877014486, 30.76445803124999),
 						zoom: 6,
@@ -96,53 +48,45 @@
 						options: {
 							styleId: 2,
 							templateId: 1
-						}/*,
-						styles: [{
-								polygonOptions: {
-									fillColor: '#FF0000',
-									fillOpacity: 0.1,
-									strokeColor: '#0000FF',
-									strokeOpacity: 0.1,
-									strokeWeight: 1.0
-								}
-							}
-						]*/
+						}
 					});
-				}
-				
-				$("#categories input[type=radio]:first").change();
+				})();
 			});
 		</script>
 		
 		<style>
 			.main {
-				
+
 			}
-			
+
 			.left-col {
-				width: 800px;
+				width: 70%;
 				float: left;
 				border: solid 1px red;
-				margin: 10px 5px 0 10px;
 			}
-			
+
 			.right-col {
-				width: 400px;
-				float: left;
+				width: 29%;
+				float: right;
 				border: solid 1px red;
-				margin: 10px 10px 0 5px;
 			}
-			
+
 			.map {
 				height: 500px;
 				display: block;
 			}
-			
+
 			.categories {
 				height: 500px;
 				display: block;
 			}
+			#accordion {
+				width: 100%;
+				float: right;
+				font-size: 12px;
+			}
 		</style>
+
     </head>
 	<body>
 		<div class="main">
@@ -150,26 +94,12 @@
 				<div class="map" id="map"></div>
 			</div>
 			<div class="right-col">
-				<div class="categories">
-					<div id="categories">
-						<input type="radio" id="category-1" name="category" checked="checked" />
-						<label for="category-1">Google</label>
-						<br />
-						
-						<input type="radio" id="category-2" name="category" />
-						<label for="category-2">Eway</label>
-						<br />
-						
-						<input type="radio" id="category-3" name="category" />
-						<label for="category-3">Yahoo</label>
-						<br />
-					</div>
-					<hr />
-					<div class="TODO">
-						
-					</div>
+				<div id="accordion">
+					
 				</div>
 			</div>
 		</div>
+		
+		<div id="templates"></div>
 	</body>
-</html>
+	</html>

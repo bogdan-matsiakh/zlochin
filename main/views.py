@@ -18,6 +18,11 @@ from django.core.urlresolvers import reverse
 from main.models import Document
 from main.forms import DocumentForm
 
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+from django.conf import settings
+
+
 def list(request):
     print xlrd
     if request.method == 'POST':
@@ -25,10 +30,13 @@ def list(request):
         
         if form.is_valid():
             file = request.FILES['docfile']
+            print type(file)
             lines = file.readlines()
-            workbook = xlrd.open_workbook('my_workbook.xls')
+            '''
+            workbook = xlrd.open_workbook()
             for line in lines:
                 print line
+                '''
             return HttpResponseRedirect('/list')
     else:
         form = DocumentForm() # A empty, unbound form
