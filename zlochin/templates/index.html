@@ -13,6 +13,45 @@
 		<script src="http://maps.google.com/maps/api/js?sensor=false&language=uk" type="text/javascript"></script>
 		
 		<script type="text/javascript">
+			var menuItems = {
+				"Зареєстровані злочини": {
+					"усього": {
+						"торік": {
+							styleID: 1,
+							templID: 1,
+							colName: "col1\x3e\x3e1"
+						},
+						"поточний рік": {
+							styleID: 1,
+							templID: 1,
+							colName: "col2\x3e\x3e1"
+						},
+						"динаміка, %": {
+							styleID: 1,
+							templID: 1,
+							colName: "col3\x3e\x3e1"
+						}
+					},
+					"тяжких та особливо тяжких": {
+						"торік": {
+							styleID: 1,
+							templID: 1,
+							colName: "col1\x3e\x3e1"
+						},
+						"поточний рік": {
+							styleID: 1,
+							templID: 1,
+							colName: "col2\x3e\x3e1"
+						},
+						"динаміка, %": {
+							styleID: 1,
+							templID: 1,
+							colName: "col3\x3e\x3e1"
+						}
+					}
+				}
+			};
+			
 			function loadList(data) {
 				console.log(data);
 			}
@@ -22,7 +61,7 @@
 					layer = null;
 				
 				// Retrieve categories list
-				$.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/od6/public/basic?alt=json-in-script&callback=loadList');
+				$.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/od6/public/values?alt=json-in-script&callback=loadList');
 				
 				$("#categories input[type=radio]").change(function(){
 					//var url = $("#categories input[type=radio]:checked").attr("url");
