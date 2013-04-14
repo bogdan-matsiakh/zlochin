@@ -64,9 +64,9 @@ body.show-discus #toggle_discus {
 	position: absolute;
 	top: 100%;
 	left: 0px;
-	padding: 0%;
-	width: 70%;
-	height: 100%;
+	padding: 1%;
+	width: 68%;
+	height: 98%;
 	overflow:hidden;
 	background-color:#EEE;
 	
