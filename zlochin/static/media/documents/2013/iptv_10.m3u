@@ -1,0 +1,139 @@
+#EXTINF:0,Боец
+http://tv.gladiator.in.ua:4022/udp/225.1.7.3:1234
+#EXTINF:0,Eurosport
+http://tv.gladiator.in.ua:4022/udp/225.1.7.4:1234
+#EXTINF:0,Eurosport 2
+http://tv.gladiator.in.ua:4022/udp/225.1.7.6:1234
+#EXTINF:0,Sport 1
+http://tv.gladiator.in.ua:4022/udp/225.1.7.1:1234
+#EXTINF:0,Наше новое кино
+http://tv.gladiator.in.ua:4022/udp/225.1.5.14:1234
+#EXTINF:0,MGM
+http://tv.gladiator.in.ua:4022/udp/225.1.5.1:1234
+#EXTINF:0,Zone Romantica
+http://tv.gladiator.in.ua:4022/udp/225.1.5.2:1234
+#EXTINF:0,Universal
+http://tv.gladiator.in.ua:4022/udp/225.1.5.15:1234
+#EXTINF:0,AXN Sci-Fi
+http://tv.gladiator.in.ua:4022/udp/225.1.5.10:1234
+#EXTINF:0,Cartoon Network
+http://tv.gladiator.in.ua:4022/udp/225.1.3.4:1234
+#EXTINF:0,English Club TV
+http://tv.gladiator.in.ua:4022/udp/225.1.1.19:1234
+#EXTINF:0,Discovery
+http://tv.gladiator.in.ua:4022/udp/225.1.4.1:1234
+#EXTINF:0,Discovery Travel
+http://tv.gladiator.in.ua:4022/udp/225.1.4.4:1234
+#EXTINF:0,Discovery Science
+http://tv.gladiator.in.ua:4022/udp/225.1.4.3:1234
+#EXTINF:0,Discovery World
+http://tv.gladiator.in.ua:4022/udp/225.1.4.2:1234
+#EXTINF:0,National Geographic
+http://tv.gladiator.in.ua:4022/udp/225.1.4.7:1234
+#EXTINF:0,Viasat Nature
+http://tv.gladiator.in.ua:4022/udp/225.1.2.21:1234
+#EXTINF:0,World Fashion Channel
+http://tv.gladiator.in.ua:4022/udp/225.1.2.25:1234
+#EXTINF:0,Комеди ТВ
+http://tv.gladiator.in.ua:4022/udp/225.1.2.35:1234
+#EXTINF:0,Охота и Рыбалка
+http://tv.gladiator.in.ua:4022/udp/225.1.2.11:1234
+#EXTINF:0,Драйв
+http://tv.gladiator.in.ua:4022/udp/225.1.2.10:1234
+#EXTINF:0,Здоровое ТВ
+http://tv.gladiator.in.ua:4022/udp/225.1.2.12:1234
+#EXTINF:0,Ретро ТВ
+http://tv.gladiator.in.ua:4022/udp/225.1.2.13:1234
+#EXTINF:0,Усадьба ТВ
+http://tv.gladiator.in.ua:4022/udp/225.1.2.14:1234
+#EXTINF:0,Домашний
+http://tv.gladiator.in.ua:4022/udp/225.1.2.34:1234
+#EXTINF:0,!TV
+http://tv.gladiator.in.ua:4022/udp/225.1.2.29:1234
+#EXTINF:0,Hallmark
+http://tv.gladiator.in.ua:4022/udp/225.1.5.13:1234
+#EXTINF:0,Первый канал. Всемирная сеть
+http://tv.gladiator.in.ua:4022/udp/225.1.1.1:1234
+#EXTINF:0,Совершенно секретно
+http://tv.gladiator.in.ua:4022/udp/225.1.2.23:1234
+#EXTINF:0,Zone Reality
+http://tv.gladiator.in.ua:4022/udp/225.1.4.6:1234
+
+
+
+#EXTINF:0 tvg-name="Ля-минор" group-title="Музыкальные/Радио" ,Ля-минор
+http://tv.gladiator.in.ua:4022/udp/225.1.2.26:1234
+#EXTINF:0 tvg-name="Mezzo", Mezzo
+http://tv.gladiator.in.ua:4022/udp/225.1.1.26:1234
+#EXTINF:0 tvg-name="Муз ТВ", Муз ТВ
+http://tv.gladiator.in.ua:4022/udp/225.1.1.6:1234
+#EXTINF:0 tvg-name="RU TV", RU TV
+http://tv.gladiator.in.ua:4022/udp/225.1.2.30:1234
+#EXTINF:0 tvg-name="Шансон", Шансон
+http://tv.gladiator.in.ua:4022/udp/225.1.2.3:1234
+#EXTINF:0 tvg-name="RU music", RU music
+http://tv.gladiator.in.ua:4022/udp/225.1.1.5:1234
+#EXTINF:0 tvg-name="M1", M1
+http://tv.gladiator.in.ua:4022/udp/225.1.1.32:1234
+#EXTINF:0 tvg-name="A-One", A-One
+http://tv.gladiator.in.ua:4022/udp/225.1.2.37:1234
+#EXTINF:0 tvg-name="OTV", OTV
+http://tv.gladiator.in.ua:4022/udp/225.1.1.10:1234
+#EXTINF:0 tvg-name="Enter-music", Enter-music
+http://tv.gladiator.in.ua:4022/udp/225.1.1.15:1234
+#EXTINF:0 tvg-name="Детское радио", Детское радио
+http://tv.gladiator.in.ua:4022/udp/225.0.1.1:1234
+#EXTINF:0 tvg-name="Media Retail", Media Retail
+http://tv.gladiator.in.ua:4022/udp/225.0.1.2:1234
+#EXTINF:0 tvg-name="Студия Шоколад", Студия Шоколад
+http://tv.gladiator.in.ua:4022/udp/225.0.1.3:1234
+#EXTINF:0 tvg-name="3ABN Radio", 3ABN Radio
+http://tv.gladiator.in.ua:4022/udp/225.0.1.4:1234
+#EXTINF:0 tvg-name="Radio 21", Radio 21
+http://tv.gladiator.in.ua:4022/udp/225.0.1.5:1234
+#EXTINF:0 tvg-name="Relax FM", Relax FM
+http://tv.gladiator.in.ua:4022/udp/225.0.1.6:1234
+#EXTINF:0 tvg-name="Эхо Москвы", Эхо Москвы
+http://tv.gladiator.in.ua:4022/udp/225.0.1.7:1234
+#EXTINF:0 tvg-name="UR 1", UR 1
+http://tv.gladiator.in.ua:4022/udp/225.0.1.8:1234
+#EXTINF:0 tvg-name="UR 2", UR 2
+http://tv.gladiator.in.ua:4022/udp/225.0.1.9:1234
+#EXTINF:0 tvg-name="UR 3", UR 3
+http://tv.gladiator.in.ua:4022/udp/225.0.1.10:1234
+#EXTINF:0 tvg-name="Ukraine International", Ukraine International
+http://tv.gladiator.in.ua:4022/udp/225.0.1.11:1234
+#EXTINF:0 tvg-name="Radio Era", Radio Era
+http://tv.gladiator.in.ua:4022/udp/225.0.1.12:1234
+#EXTINF:0 tvg-name="Love Radio (Ukraine)", Love Radio (Ukraine)
+http://tv.gladiator.in.ua:4022/udp/225.0.1.13:1234
+#EXTINF:0 tvg-name="Emmanuel", Emmanuel
+http://tv.gladiator.in.ua:4022/udp/225.0.1.14:1234
+#EXTINF:0 tvg-name="Rock Nation", Rock Nation
+http://tv.gladiator.in.ua:4022/udp/225.0.1.15:1234
+#EXTINF:0 tvg-name="TGN Radio", TGN Radio
+http://tv.gladiator.in.ua:4022/udp/225.0.1.16:1234
+#EXTINF:0 tvg-name="neo zwei", neo zwei
+http://tv.gladiator.in.ua:4022/udp/225.0.1.17:1234
+#EXTINF:0 tvg-name="Makedonsko Radio", Makedonsko Radio
+http://tv.gladiator.in.ua:4022/udp/225.0.1.18:1234
+#EXTINF:0 tvg-name="The Overcomer", The Overcomer
+http://tv.gladiator.in.ua:4022/udp/225.0.1.19:1234
+#EXTINF:0 tvg-name="M2", M2
+http://tv.gladiator.in.ua:4022/udp/225.1.1.14:1234
+
+
+#EXTINF:0 tvg-name="Интер", Интер
+http://tv.gladiator.in.ua:4022/udp/225.1.1.2:1234
+#EXTINF:0 tvg-name="СТБ", СТБ
+http://tv.gladiator.in.ua:4022/udp/225.1.1.29:1234
+#EXTINF:0 tvg-name="Новый канал", Новый канал
+http://tv.gladiator.in.ua:4022/udp/225.1.1.30:1234
+#EXTINF:0 tvg-name="СТС", СТС
+http://tv.gladiator.in.ua:4022/udp/225.1.1.37:1234
+#EXTINF:0 tvg-name="ТНТ", ТНТ
+http://tv.gladiator.in.ua:4022/udp/225.1.1.36:1234
+#EXTINF:0 tvg-name="Спорт", Спорт
+http://tv.gladiator.in.ua:4022/udp/225.1.7.7:1234
+#EXTINF:0 tvg-name="Спорт Союз", Спорт Союз
+http://tv.gladiator.in.ua:4022/udp/225.1.7.9:1234

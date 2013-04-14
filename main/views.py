@@ -1,10 +1,16 @@
-# Create your views here.
-import os
-from django.shortcuts import render_to_response
-from django.http import HttpResponse
-from django.db.models import Q
-
 # -*- coding: utf-8 -*-
+import os
+import sys
+import xlrd
+from django.shortcuts import render_to_response
+from django.http import HttpResponse, HttpResponseRedirect
+from django.db.models import Q
+from django.template import RequestContext
+from main.models import Document
+#from main.forms import UploadFileForm
+import urllib2
+
+from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -12,49 +18,32 @@ from django.core.urlresolvers import reverse
 from main.models import Document
 from main.forms import DocumentForm
 
-#from django.http import HttpResponseRedirect
-from django.shortcuts import render
-#rom main.forms import DocumentForm
-#from main.models import Document
-import urllib2
-
-
 def list(request):
+    print xlrd
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
+        
         if form.is_valid():
-            instance = Document(file_field=request.FILES['file'])
-            instance.save()
-            return HttpResponseRedirect('/')
-    else:
-        form = DocumentForm()
-    return render(request, 'upload.html', {'form': form})
-
-'''
-
-def list(request):
-    # Handle file upload
-    if request.method == 'POST':
-        form = DocumentForm(request.POST, request.FILES)
-        if form.is_valid():
-            newdoc = Document(docfile = request.FILES['docfile'])
-            newdoc.save()
-
-            # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('main.views.list'))
+            file = request.FILES['docfile']
+            lines = file.readlines()
+            for line in lines:
+                print line
+            return HttpResponseRedirect('/list')
     else:
         form = DocumentForm() # A empty, unbound form
 
-    # Load documents for the list page
     documents = Document.objects.all()
 
-    # Render list page with the documents and the form
     return render_to_response(
-        'upload.html',
+        'list.html',
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
-'''
+
+def handle_uploaded_file(f):
+    with open(f, 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
 
 def index(request):
     return render_to_response('index.html')
@@ -62,4 +51,4 @@ def index(request):
 def site(request):
     url = request.GET.get('url')
     text = urllib2.urlopen(url).read()
-    return HttpResponse(text, content_type="text/plain; charset=utf-8")
+    return HttpResponse(text, content_type="text/html; charset=utf-8")
