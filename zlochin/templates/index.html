@@ -16,7 +16,7 @@
 		
 		<script type="text/javascript">
 			function loadList(data) {
-				parser.parse(data)
+				parser.parse(data);
 			}
 			
 			$(function() {
@@ -27,6 +27,8 @@
 				$.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/od6/public/values?alt=json-in-script&callback=loadList');
 				
 				$('#accordion').accordion();
+				
+				parser.init();
 				
 				(function initMap() {
 					map = new google.maps.Map(document.getElementById('map'), {
@@ -103,36 +105,7 @@
 			</div>
 			<div class="right-col">
 				<div id="accordion">
-					<h3>Section 3</h3>
-					<div>
-						<p>
-							Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-							Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-							ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-							lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-						</p>
-						<ul>
-							<li>
-								List item one
-							</li>
-							<li>
-								List item two
-							</li>
-							<li>
-								List item three
-							</li>
-						</ul>
-					</div>
-					<h3>Section 4</h3>
-					<div>
-						Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-						et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-						faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-						mauris vel est.
-						Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-						Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-						inceptos himenaeos.
-					</div>
+					
 				</div>
 			</div>
 		</div>
