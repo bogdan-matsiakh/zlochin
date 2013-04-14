@@ -19,13 +19,13 @@ from main.models import Document
 
 def list(request):
     if request.method == 'POST':
-        form = UploadFileForm(request.POST, request.FILES)
+        form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
-            instance = ModelWithFileField(file_field=request.FILES['file'])
+            instance = Document(file_field=request.FILES['file'])
             instance.save()
             return HttpResponseRedirect('/')
     else:
-        form = UploadFileForm()
+        form = DocumentForm()
     return render(request, 'upload.html', {'form': form})
 
 '''
