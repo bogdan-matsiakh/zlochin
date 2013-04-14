@@ -1,0 +1,31 @@
+.main {
+				
+}
+
+.left-col {
+	width: 800px;
+	float: left;
+	border: solid 1px red;
+	margin: 10px 5px 0 10px;
+}
+
+.right-col {
+	width: 400px;
+	float: left;
+	border: solid 1px red;
+	margin: 10px 10px 0 5px;
+}
+
+.map {
+	height: 500px;
+	display: block;
+}
+
+.categories {
+	height: 500px;
+	display: block;
+}
+#accordion {
+	width: 300px;
+	float:right;
+}

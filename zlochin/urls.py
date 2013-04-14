@@ -14,6 +14,7 @@ from django.views.generic.simple import redirect_to
 
 urlpatterns = patterns('main.views',
     url(r'^list/$', 'list', name='list'),
+     url(r'^$', 'index', name='index'),
 )
 
 '''

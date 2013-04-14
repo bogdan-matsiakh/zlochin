@@ -4,7 +4,7 @@
 		<title>Zloch.in.ua</title>
 		
 		<link rel="styylesheet" href="../static/css/style.css" />
-		<link rel="styylesheet" href="http://code.jquery.com/ui/1.10.2/themes/sunny/jquery-ui.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 		
 		<script type="text/javascript" src="../static/js/script.js" ></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js" ></script>
@@ -15,45 +15,6 @@
 		<script type="text/javascript" src="../static/js/parser.js"></script>
 		
 		<script type="text/javascript">
-			var menuItems = {
-				"Зареєстровані злочини": {
-					"усього": {
-						"торік": {
-							styleID: 1,
-							templID: 1,
-							colName: "col1\x3e\x3e1"
-						},
-						"поточний рік": {
-							styleID: 1,
-							templID: 1,
-							colName: "col2\x3e\x3e1"
-						},
-						"динаміка, %": {
-							styleID: 1,
-							templID: 1,
-							colName: "col3\x3e\x3e1"
-						}
-					},
-					"тяжких та особливо тяжких": {
-						"торік": {
-							styleID: 1,
-							templID: 1,
-							colName: "col1\x3e\x3e1"
-						},
-						"поточний рік": {
-							styleID: 1,
-							templID: 1,
-							colName: "col2\x3e\x3e1"
-						},
-						"динаміка, %": {
-							styleID: 1,
-							templID: 1,
-							colName: "col3\x3e\x3e1"
-						}
-					}
-				}
-			};
-			
 			function loadList(data) {
 				parser.parse(data)
 			}
@@ -65,12 +26,9 @@
 				// Retrieve categories list
 				$.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/od6/public/values?alt=json-in-script&callback=loadList');
 				
-				$("#categories input[type=radio]").change(function(){
-					//var url = $("#categories input[type=radio]:checked").attr("url");
-					initMap();
-				});
+				$('#accordion').accordion();
 				
-				function initMap() {
+				(function initMap() {
 					map = new google.maps.Map(document.getElementById('map'), {
 						center: new google.maps.LatLng(46.918844877014486, 30.76445803124999),
 						zoom: 6,
@@ -100,41 +58,43 @@
 							}
 						]*/
 					});
-				}
-				
-				$("#categories input[type=radio]:first").change();
+				})();
 			});
 		</script>
 		
 		<style>
 			.main {
-				
+
 			}
-			
+
 			.left-col {
-				width: 800px;
+				width: 70%;
 				float: left;
 				border: solid 1px red;
-				margin: 10px 5px 0 10px;
 			}
-			
+
 			.right-col {
-				width: 400px;
-				float: left;
+				width: 29%;
+				float: right;
 				border: solid 1px red;
-				margin: 10px 10px 0 5px;
 			}
-			
+
 			.map {
 				height: 500px;
 				display: block;
 			}
-			
+
 			.categories {
 				height: 500px;
 				display: block;
 			}
+			#accordion {
+				width: 100%;
+				float: right;
+				font-size: 12px;
+			}
 		</style>
+
     </head>
 	<body>
 		<div class="main">
@@ -142,26 +102,41 @@
 				<div class="map" id="map"></div>
 			</div>
 			<div class="right-col">
-				<div class="categories">
-					<div id="categories">
-						<input type="radio" id="category-1" name="category" checked="checked" />
-						<label for="category-1">Google</label>
-						<br />
-						
-						<input type="radio" id="category-2" name="category" />
-						<label for="category-2">Eway</label>
-						<br />
-						
-						<input type="radio" id="category-3" name="category" />
-						<label for="category-3">Yahoo</label>
-						<br />
+				<div id="accordion">
+					<h3>Section 3</h3>
+					<div>
+						<p>
+							Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+							Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+							ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+							lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+						</p>
+						<ul>
+							<li>
+								List item one
+							</li>
+							<li>
+								List item two
+							</li>
+							<li>
+								List item three
+							</li>
+						</ul>
 					</div>
-					<hr />
-					<div class="TODO">
-						
+					<h3>Section 4</h3>
+					<div>
+						Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+						et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+						faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+						mauris vel est.
+						Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+						Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+						inceptos himenaeos.
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<div id="templates"></div>
 	</body>
-</html>
+	</html>

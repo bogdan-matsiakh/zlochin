@@ -1,5 +1,7 @@
 parser = (function () {
-    var _items = {
+    var _controls = {}, 
+    
+        _items = {
 				"Зареєстровані злочини": {
 					"усього": {
 						"торік": {
@@ -35,19 +37,24 @@ parser = (function () {
 							colName: "col3\x3e\x3e1"
 						}
 					}
-				},
+				}
+			},
         _parse = function (data) {
             var elems = data.feed.entry;
                 
             
+        },
+        _createMenu = function () {
+            
+        },
+        _init = function () {
+            
         };
-    
-    
-    
     return {
         parse : function (data) {
             _parse(data);
-        }
+        },
+        init : _init
     }
 })()
 
