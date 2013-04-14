@@ -26,6 +26,7 @@ def list(request):
         if form.is_valid():
             file = request.FILES['docfile']
             lines = file.readlines()
+            workbook = xlrd.open_workbook('my_workbook.xls')
             for line in lines:
                 print line
             return HttpResponseRedirect('/list')
