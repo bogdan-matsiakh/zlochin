@@ -1,6 +1,7 @@
 body {
 	background-color: #EEE;	
 }
+
 .main {
 
 }
@@ -28,6 +29,26 @@ body {
 	font-size: 12px;
 	margin-right: 3px;
 }
+
+#accordion a {
+	line-height: 20px;
+	padding: 3px;
+}
+
+#accordion a.selected {
+	background: #0A0;
+	color: white;
+	text-decoration: none;
+}
+
+#accordion .margin-bottom {
+	margin-bottom: 5px;
+}
+
+#accordion .margin-left {
+	margin-left: 20px;
+}
+
 #templates {
 	display :none;
 }
