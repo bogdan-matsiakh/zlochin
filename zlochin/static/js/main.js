@@ -19,8 +19,8 @@ $(function() {
 	
 	parser.init();
 	mapWorker.show({
-		colName: "col2\x3e\x3e1",
-		styleID: 2,
-		templID: 1
+		colName: 'col210',
+		styleID: 3,
+		templID: 4
 	});
 });
