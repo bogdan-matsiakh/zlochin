@@ -3,82 +3,17 @@
 	<head>
 		<title>Zloch.in.ua</title>
 		
-		<link rel="styylesheet" href="../static/css/style.css" />
-		 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" href="../static/css/style.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 		
-		<script type="text/javascript" src="../static/js/script.js" ></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js" ></script>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
-		
 		<script src="http://maps.google.com/maps/api/js?sensor=false&language=uk" type="text/javascript"></script>
 		
 		<script type="text/javascript" src="../static/js/parser.js"></script>
 		<script type="text/javascript" src="../static/js/map-worker.js"></script>
-		
-		<script type="text/javascript">
-			function loadList(data) {
-				parser.parse(data);
-				$( "#accordion" ).accordion({
-			    	heightStyle: "fill"
-			    });
-			    $( "#accordion-resizer" ).resizable({
-					minHeight: 140,
-					minWidth: 200,
-					resize: function() {
-						$( "#accordion" ).accordion( "refresh" );
-					}
-			    });
-			    $('input').button();
-			}
-			
-			$(function() {
-			
-				$.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/od6/public/values?alt=json-in-script&callback=loadList');
-				
-				parser.init();
-				mapWorker.show({
-					colName: "col2\x3e\x3e1",
-					styleID: 2,
-					templID: 1
-				});
-			});
-		</script>
-		
-		<style>
-			body {
-				background-color: #EEE;	
-			}
-			.main {
-				border: 2px solid #888;
-				overflow:hidden;
-			}
-
-			.left-col {
-				width: 70%;
-				float: left;
-			}
-
-			.right-col {
-				width: 29%;
-				float: right;
-			}
-
-			.map {
-				height: 600px;
-				margin-top: 3px;
-				margin-left:3px;
-				display: block;
-			}
-
-			#accordion {
-				width: 100%;
-				height: 600px;
-				float: right;
-				font-size: 12px;
-				margin-right: 3px;
-			}
-		</style>
-
+		<script type="text/javascript" src="../static/js/href-helper.js"></script>
+		<script type="text/javascript" src="../static/js/main.js"></script>
     </head>
 	<body>
 		<div class="main">
