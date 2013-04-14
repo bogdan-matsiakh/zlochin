@@ -14,8 +14,8 @@ from main.forms import DocumentForm
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from .forms import UploadFileForm
-from .models import ModelWithFileField
+from main.forms import DocumentForm
+from main.models import Document
 
 def list(request):
     if request.method == 'POST':
