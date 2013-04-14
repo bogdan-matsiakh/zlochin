@@ -19,4 +19,6 @@ urlpatterns = patterns('',
     
     url(r'^$', 'main.views.index'),
     url(r'^list/$', 'main.views.list'),
+    
+    url(r'^site/$', 'main.views.site'),
 )

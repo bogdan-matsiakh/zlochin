@@ -12,10 +12,12 @@ from django.core.urlresolvers import reverse
 from main.models import Document
 from main.forms import DocumentForm
 
-from django.http import HttpResponseRedirect
+#from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from main.forms import DocumentForm
-from main.models import Document
+#rom main.forms import DocumentForm
+#from main.models import Document
+import urllib2
+
 
 def list(request):
     if request.method == 'POST':
@@ -57,4 +59,7 @@ def list(request):
 def index(request):
     return render_to_response('index.html')
 
-
+def site(request):
+    url = request.GET.get('url')
+    text = urllib2.urlopen(url).read()
+    return HttpResponse(text, content_type="text/plain; charset=utf-8")
