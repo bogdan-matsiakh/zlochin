@@ -1,9 +1,9 @@
 dataHelper = (function () {
     var _getLegend = function(url, callback) {
     		$.ajax("/site", {
-    			type: "POST",
+    			type: "GET",
     			data: {
-    				url: "http://google.com.ua"
+    				url: url
     			},
     			success: function(data) {
     				if (callback instanceof Function) callback(data);
