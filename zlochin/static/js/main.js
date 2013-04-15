@@ -20,10 +20,4 @@ $(function() {
 	})
 	
 	parser.init();
-	
-	// Cosmethicise discuss
-	var iframe = $("iframe:first", $("#disqus_thread"))[0];
-	iframe.document.removeChild(iframe.document.getElementById("discovery"));
-	iframe.document.removeChild(iframe.document.getElementById("discovery-top"));
-	iframe.document.removeChild(iframe.document.getElementById("discovery-bottom"));
 });
