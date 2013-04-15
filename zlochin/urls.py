@@ -12,10 +12,11 @@ from django.conf.urls.static import static
 #from django.views.generic.simple import redirect_to
 
 
-urlpatterns = patterns('main.views',
-    url(r'^list/$', 'list', name='list'),
-    url(r'^$', 'index', name='index'),
-    url(r'^site/$', 'site', name='site'),
+urlpatterns = patterns('',
+                       
+    url(r'^site/$', 'main.views.site'),
+    url(r'^list/$', 'main.views.list'),
+    url(r'^$', 'main.views.index'),
 )
 
 '''
@@ -33,6 +34,6 @@ urlpatterns = patterns('',
     
     url(r'^$', 'main.views.index'),
     
-    url(r'^site/$', 'main.views.site'),
+    
 )
 '''

@@ -76,15 +76,16 @@ body.show-discus #toggle_discus {
 }
 
 #toggle_discus {
-	position: absolute;
+	position: fixed;
 	right: 30%;
-	bottom: 0%;
+	bottom: 0px;
 	width: 100px;
 	z-index: 1;
 	border: 1px solid #999;
 	border-radius: 3px;
 	background-color: #FFE;
 	cursor: pointer;
+	
 }
 
 #hidden {
