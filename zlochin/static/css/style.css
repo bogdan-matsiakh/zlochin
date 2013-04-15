@@ -88,6 +88,6 @@ body.show-discus #toggle_discus {
 	
 }
 
-#hidden {
+.hidden {
 	display: none;
 }
