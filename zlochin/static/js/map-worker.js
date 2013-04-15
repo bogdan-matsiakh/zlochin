@@ -12,12 +12,8 @@ mapWorker = (function () {
 			
 			// Get legend
 			dataHelper.getLegend(data.url, function(data) {
-			    
-				var html = $('<div>').html(data);
-				say(html); 
-				say(html.find("div"))
-				var legend = html.find("#googft-legend")[0].outerHTML;
-				var style = $("style:first", data)[0].outerHTML;
+				var legend = $("#googft-legend", data)[0].outerHTML,
+					style = $("style:first", data)[0].outerHTML;
 				$(document.head).append(style);
 				$(document.body).append(legend);
 			});

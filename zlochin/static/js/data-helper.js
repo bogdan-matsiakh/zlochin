@@ -6,6 +6,7 @@ dataHelper = (function () {
     				url: url
     			},
     			success: function(data) {
+    			    say(data);
     				if (callback instanceof Function) callback(data);
     			}
     		});

@@ -76,6 +76,12 @@ parser = (function () {
 		            			href: "#" + item2Hash
 		            		}).appendTo($("<div>").appendTo(item1Div));
                 		
+                		if (item2.url === '') {
+                            item1H.addClass('red');
+                        } else {
+                            item1H.addClass('green');
+                        }
+                		
                 		$(item2A).click(function(){
                 			_clickMenu(item2A, item2);
                 		});
@@ -91,7 +97,10 @@ parser = (function () {
                 			text: item2Name,
                 			'class': 'margin-bottom'
                 		}).appendTo(item1Div);
+                		
                 		var item2Div = $("<div>").appendTo(item1Div);
+                		
+                		
 		                $.each(item2, function(item3Name, item3){
 		                	var item3Hash = _getItemHash(item3),
 				            	item3A = $("<a>", {
@@ -99,6 +108,11 @@ parser = (function () {
 				        			href: "#" + item3Hash,
 				        			'class': 'margin-left'
 				        		}).appendTo($("<div>").appendTo(item2Div));
+		            		if (item3.url === '') {
+		            		    item1H.addClass('red');
+		            		} else {
+		            		    item1H.addClass('green');
+		            		}
 		            		
 		            		$(item3A).click(function(){
 		            			_clickMenu(item3A, item3);
