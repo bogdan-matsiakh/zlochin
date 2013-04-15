@@ -49,15 +49,14 @@ def list(request):
         context_instance=RequestContext(request)
     )
 
-def handle_uploaded_file(f):
-    with open(f, 'wb+') as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)
-
 def index(request):
     return render_to_response('index.html')
 
 def site(request):
-    url = request.GET.get('url')
+    url = request.POST.get('url')
     text = urllib2.urlopen(url).read()
     return HttpResponse(text, content_type="text/html; charset=utf-8")
+
+from HTMLParser import HTMLParser
+
+

@@ -14,7 +14,8 @@ from django.conf.urls.static import static
 
 urlpatterns = patterns('main.views',
     url(r'^list/$', 'list', name='list'),
-     url(r'^$', 'index', name='index'),
+    url(r'^$', 'index', name='index'),
+    url(r'^site/$', 'site', name='site'),
 )
 
 '''
