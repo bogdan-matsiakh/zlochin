@@ -86,3 +86,7 @@ body.show-discus #toggle_discus {
 	background-color: #FFE;
 	cursor: pointer;
 }
+
+#hidden {
+	display: none;
+}
