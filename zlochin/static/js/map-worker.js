@@ -9,20 +9,6 @@ mapWorker = (function () {
 				zoom: 6,
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			});
-			
-			// Get legend
-			$("<iframe>", {
-				//'class': "hidden",
-				src: data.url.replace("https:", "http:"),
-				id: "iframe-hidden",
-				onload: function(){
-					console.log(this);
-					//console.log($("#googft-legend", $(this.document)));
-					//console.log($("style:first", $(this.document)));
-				}
-			}).appendTo($(document.body));
-			
-//			_map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
 
 			_layer = new google.maps.FusionTablesLayer({
 				map: _map,
@@ -39,6 +25,7 @@ mapWorker = (function () {
 			});
 			
 			_showLogo();
+			_showLegend();
         },
         _showLogo = function(){
         	var div = document.createElement('div'),
@@ -50,6 +37,18 @@ mapWorker = (function () {
 			img.src = '../static/images/logo.png';
 			img.style.width = '200';
 			img.style.height = '101';
+			div.appendChild(img);
+        },
+        _showLegend = function(){
+        	var div = document.createElement('div'),
+        		img = document.createElement('img');
+			_map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(div);
+			div.style.border = 'none';
+			div.style.borderWidth = '0px';
+			div.style.position = 'absolute';
+			img.src = '../static/images/legend.png';
+			img.style.width = '82';
+			img.style.height = '91';
 			div.appendChild(img);
         };
     return {
