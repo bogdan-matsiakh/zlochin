@@ -2,6 +2,20 @@ body {
 	background-color: #EEE;
 	overflow-y: scroll;	
 }
+h3.green {
+	background-color: #EFE;
+	background-image: none;
+}
+
+h3.red {
+	background-color: #FEE;
+	background-image: none;
+}
+h3.red.green {
+	background-color: #FFD;
+	background-image: none;
+}
+
 body.show-discus #disqus_thread {
 	top: 0%;
 }
