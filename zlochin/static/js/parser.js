@@ -13,6 +13,7 @@ parser = (function () {
                     cat1 = entry.gsx$cat1,
                     cat2 = entry.gsx$cat2,
                     cat3 = entry.gsx$cat3,
+                    url = entry.gsx$url,
                     item = null;
                 
                 if (templID) templID = templID.$t;
@@ -22,12 +23,14 @@ parser = (function () {
                 if (cat1) cat1 = cat1.$t;
                 if (cat2) cat2 = cat2.$t;
                 if (cat3) cat3 = cat3.$t;
+                if (url) url = url.$t;
                 
                 if (active == 1) {
 		            item = {
 		                templID: templID,
 		                styleID: styleID,
-		                colName: colName
+		                colName: colName,
+		                url: url
 		            };
 		            
 		            if (cat1) {

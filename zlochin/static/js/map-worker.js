@@ -1,5 +1,5 @@
 mapWorker = (function () {
-    var _townCenter = new google.maps.LatLng(46.918844877014486, 30.76445803124999),
+    var _townCenter = new google.maps.LatLng(48.518844877014486, 30.76445803124999),
     	_map = null,
     	_layer = null,
     	_logoOverlay = null,
@@ -9,6 +9,14 @@ mapWorker = (function () {
 				zoom: 6,
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			});
+			
+			// Get legend
+			dataHelper.getLegend(data.url, function(data) {
+				$(document.head).append(data.style);
+				$(document.body).append(data.template);
+			});
+			
+			_map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
 
 			_layer = new google.maps.FusionTablesLayer({
 				map: _map,
@@ -39,8 +47,6 @@ mapWorker = (function () {
 			div.appendChild(img);
         };
     return {
-        show : function (data) {
-            _show(data);
-        }
+        show : _show
     }
 })();
