@@ -11,14 +11,18 @@ mapWorker = (function () {
 			});
 			
 			// Get legend
-			dataHelper.getLegend(data.url, function(data) {
-				var legend = $("#googft-legend", data)[0].outerHTML,
-					style = $("style:first", data)[0].outerHTML;
-				$(document.head).append(style);
-				$(document.body).append(legend);
-			});
+			$("<iframe>", {
+				//'class': "hidden",
+				src: data.url.replace("https:", "http:"),
+				id: "iframe-hidden",
+				onload: function(){
+					console.log(this);
+					//console.log($("#googft-legend", $(this.document)));
+					//console.log($("style:first", $(this.document)));
+				}
+			}).appendTo($(document.body));
 			
-			_map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+//			_map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
 
 			_layer = new google.maps.FusionTablesLayer({
 				map: _map,
