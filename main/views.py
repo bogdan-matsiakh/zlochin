@@ -53,14 +53,10 @@ def index(request):
     return render_to_response('index.html')
 
 def site(request):
-    #url = request.POST.get('url')
-    #template = request.POST.get('template')
-    url = 'https://www.google.com/fusiontables/embedviz?viz=MAP&q=select+col210+from+1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I&h=false&lat=48.53600159335156&lng=31.17925930023216&z=5&t=1&l=col210&y=6&tmplt=7'
-    template = 'googft-legend'
-    lines = urllib2.urlopen(url).readlines()
-    print lines
-    text = ''
-    if template:
-        for line in lines:
-            text += line
+    url = request.POST.get('url')
+    text = urllib2.urlopen(url).read()
     return HttpResponse(text, content_type="text/html; charset=utf-8")
+
+from HTMLParser import HTMLParser
+
+
