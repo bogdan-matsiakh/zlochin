@@ -69,6 +69,7 @@ body.show-discus #toggle_discus {
 	height: 98%;
 	overflow:hidden;
 	background-color:#EEE;
+	cursor: pointer;
 	
 	transition:top 1s;
 	-webkit-transition:top 1s;
@@ -86,4 +87,5 @@ body.show-discus #toggle_discus {
 	border: 1px solid #999;
 	border-radius: 3px;
 	background-color: #FFE;
+	cursor: pointer;
 }
