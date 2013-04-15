@@ -3,8 +3,7 @@ dataHelper = (function () {
     		$.ajax("/site", {
     			type: 'POST',
     			data: {
-    				url: url,
-    				template: "googft-legend"
+    				url: url
     			},
     			success: function(data) {
     				if (callback instanceof Function) callback(data);
