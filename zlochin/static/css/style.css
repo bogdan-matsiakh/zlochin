@@ -2,7 +2,7 @@ body {
 	background-color: #EEE;
 	overflow-y: scroll;	
 }
-body.show-discus .disqus-thread-container {
+body.show-discus #disqus_thread {
 	top: 0%;
 }
 body.show-discus #toggle_discus {
@@ -60,34 +60,19 @@ body.show-discus #toggle_discus {
 	display :none;
 }
 
-.disqus-thread-container {
+#disqus_thread {
 	position: absolute;
 	top: 100%;
 	left: 0px;
 	padding: 1%;
 	width: 68%;
 	height: 98%;
-	overflow:hidden;
-	background-color:#EEE;
+	background-color: #EEE;
 	
 	transition:top 1s;
 	-webkit-transition:top 1s;
 	-o-transition:top 1s;
 	-moz-transition:top 1s;
-}
-
-.disqus-thread-container-sub {
-	position: relative;
-	width: 100%;
-	height: 100%;	
-}
-
-#disqus_thread {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 }
 
 #toggle_discus {
