@@ -12,8 +12,10 @@ mapWorker = (function () {
 			
 			// Get legend
 			dataHelper.getLegend(data.url, function(data) {
-				$(document.head).append(data.style);
-				$(document.body).append(data.template);
+				var legend = $("#googft-legend", data)[0].outerHTML,
+					style = $("style:first", data)[0].outerHTML;
+				$(document.head).append(style);
+				$(document.body).append(legend);
 			});
 			
 			_map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
