@@ -1,7 +1,12 @@
 body {
 	background-color: #EEE;
 	overflow-y: scroll;	
+	margin: 0;
+	padding: 0;
+	font-family: Verdana;
+	font-size: 14px;
 }
+
 h3.green {
 	background-color: #EFE;
 	background-image: none;
@@ -11,6 +16,7 @@ h3.red {
 	background-color: #FEE;
 	background-image: none;
 }
+
 h3.red.green {
 	background-color: #FFD;
 	background-image: none;
@@ -19,36 +25,100 @@ h3.red.green {
 body.show-discus #disqus_thread {
 	top: 0%;
 }
+
 body.show-discus #toggle_discus {
 	color:#ffe;
 	background-color:#0a0;
 }
+
 .main {
-
+	width: 800px;
+	display: block;
+	margin: 0 auto;
 }
 
-.left-col {
-	width: 70%;
-	float: left;
+.head {
+	height: 101px;
+	position: relative;
+	margin: 0 0 10px 0;
 }
 
-.right-col {
-	width: 30%;
-	float: right;
+.head .logo {
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 200px;
+	height: 101px;
+	background: transparent url(../images/logo.png) no-repeat top left;
+}
+
+.head .menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 101px;
+}
+
+.head .menu ul {
+	margin: 0;
+	padding: 0;
+	border: solid 1px #00AA00;
+	border-top: none;
+	height: 70px;
+	overflow: hidden;
+	background: #DDFFDD;
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.head .menu ul li {
+	margin: 0;
+	padding: 0;
+	width: 150px;
+	list-style: none;
+	line-height: 70px;
+	display: inline-block;
+}
+
+.head .menu ul li a {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+	height: 70px;
+	line-height: 70px;
+	text-decoration: none;
+	display: block;
+	color: #000000;
+	font-family: Comic Sans MS;
+	font-size: 20px;
+}
+
+.head .menu ul li a:hover {
+	background: #FFFFCC;
+}
+
+.info {
+	height: 400px;
 }
 
 .map {
 	height: 600px;
-	margin-top: 3px;
-	margin-left:3px;
 	display: block;
 }
 
+.footer {
+	height: 100px;
+	display: block;	
+}
+
 #accordion {
-	width: 98%;
-	float: right;
 	font-size: 12px;
-	margin: 0px 1%;
 }
 
 #accordion a {
@@ -99,6 +169,5 @@ body.show-discus #toggle_discus {
 	border-radius: 3px;
 	background-color: #FFE;
 	cursor: pointer;
-	
 }
 

@@ -7,6 +7,7 @@
 		
 		<link rel="stylesheet" href="../static/css/style.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
 		
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js" ></script>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
@@ -38,10 +39,21 @@
     </head>
 	<body>
 		<div class="main">
-			<div class="left-col">
-				<div class="map" id="map"></div>
+			<div class="head">
+				<div class="logo"></div>
+				<div class="menu">
+					<ul>
+						<li><a href="javascript: void(0);">Головна</a></li>
+						<li><a href="javascript: void(0);">Про проект</a></li>
+						<li><a href="javascript: void(0);">Контакти</a></li>
+					</ul>
+				</div>
 			</div>
-			<div class="right-col">
+			<div class="info">
+				<div id="accordion"></div>
+			</div>
+			<div class="map" id="map"></div>
+			<div class="footer">
 				<div>
 					<!-- sharethis body -->
 					<span class='st_facebook_large' displayText='Facebook'></span>
@@ -56,14 +68,13 @@
 					<span class='st_sharethis_large' displayText='ShareThis'></span>
 					<!-- sharethis body END-->
 				</div>
-				<div id="accordion"></div>
 			</div>
 		</div>
 		
-		<button id="toggle_discus">Показати коментарі</button>
+		<!--button id="toggle_discus">Показати коментарі</button-->
 		
 		<!-- http://zlochinua.disqus.com/admin/universalcode/ -->
-		<div id="disqus_thread"></div>
+		<!--div id="disqus_thread"></div>
 		<script type="text/javascript">
 			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 			var disqus_shortname = 'zlochinua'; // required: replace example with your forum shortname
@@ -76,7 +87,7 @@
 			})();
 		</script>
 		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
-		<a href="http://disqus.com" class="dsq-brlink"><span class="logo-disqus">Disqus</span></a>
+		<a href="http://disqus.com" class="dsq-brlink"><span class="logo-disqus">Disqus</span></a-->
 		<!-- http://zlochinua.disqus.com/admin/universalcode/ END -->
 	</body>
 </html>
