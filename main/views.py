@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-import os
-import sys
+import os, sys, urllib2, csv
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.context_processors import csrf
 from django.db.models import Q
-import urllib2
-
+from forms import *
 
 def index(request):
     return render_to_response('index.html')
@@ -14,3 +13,46 @@ def site(request):
     url = request.GET.get('url')
     text = urllib2.urlopen(url).read()
     return HttpResponse(src, content_type="text/html; charset=utf-8")
+
+def file(request):
+    if request.method == 'POST':
+        a=request.POST
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            print 'file'
+            print request.FILES['file']
+            
+            upload(request.FILES['file'])
+            return HttpResponseRedirect('/file')
+    else:
+        form = UploadFileForm()
+
+    c = {'form': form}
+    c.update(csrf(request))
+    return render_to_response('upload.html', c)
+
+
+def upload(file):
+    print 'file'
+    print file
+    print open(file, 'rb')
+    with open(file, 'rb') as csvfile:
+        spamreader = csv.reader(csvfile, quotechar='|')
+        
+        first_line = False
+        attributes = []
+        print 'spamreader: '
+        print spamreader
+        
+        for row in spamreader:
+            if not first_line:
+                first_line = True
+                attributes = row
+                print 'attributes:', attributes
+            else:
+                print 'row:', row
+               # print ', '.join(row)
+                
+   
+    return render_to_response('index.html')

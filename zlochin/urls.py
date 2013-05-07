@@ -17,6 +17,8 @@ urlpatterns = patterns('',
     url(r'^site/$', 'main.views.site'),
     url(r'^list/$', 'main.views.list'),
     url(r'^$', 'main.views.index'),
+    url(r'^upload$', 'main.views.upload'),
+    url(r'^file$', 'main.views.file'),
 )
 
 '''
