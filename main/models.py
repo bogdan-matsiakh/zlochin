@@ -29,6 +29,7 @@ class Crime(models.Model):
     )
     title = models.CharField(max_length = 20, choices = CRIME_TITLES)
     number = models.IntegerField()
+    hour = models.IntegerField(blank=True, null=True)
     place = models.ForeignKey(Place, verbose_name="place of crime")
     approved = models.BooleanField(default = False)
     
