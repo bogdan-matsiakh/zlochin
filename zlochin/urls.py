@@ -13,12 +13,17 @@ from django.conf.urls.static import static
 
 
 urlpatterns = patterns('',
-                       
     url(r'^site/$', 'main.views.site'),
-    url(r'^list/$', 'main.views.list'),
+  #  url(r'^list/$', 'main.views.list'),
     url(r'^$', 'main.views.index'),
     url(r'^upload$', 'main.views.upload'),
     url(r'^file$', 'main.views.file'),
+    
+     # Uncomment the admin/doc line below to enable admin documentation:
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Uncomment the next line to enable the admin:
+    url(r'^admin/', include(admin.site.urls)),
 )
 
 '''
@@ -28,11 +33,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'zlochin.views.home', name='home'),
     # url(r'^zlochin/', include('zlochin.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
+   
     
     url(r'^$', 'main.views.index'),
     

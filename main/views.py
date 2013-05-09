@@ -36,23 +36,16 @@ def file(request):
 def upload(file):
     print 'file'
     print file
-    print open(file, 'rb')
-    with open(file, 'rb') as csvfile:
-        spamreader = csv.reader(csvfile, quotechar='|')
-        
-        first_line = False
-        attributes = []
-        print 'spamreader: '
-        print spamreader
-        
-        for row in spamreader:
-            if not first_line:
-                first_line = True
-                attributes = row
-                print 'attributes:', attributes
-            else:
-                print 'row:', row
-               # print ', '.join(row)
-                
-   
+    lines = file.readlines()
+    
+    first_line = False
+    attributes = []
+    
+    for line in lines:
+        if not first_line:
+            first_line = True
+            attributes = line
+            print 'attributes:', attributes
+        else:
+            print 'row:', line
     return render_to_response('index.html')
