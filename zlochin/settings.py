@@ -11,11 +11,13 @@ ADMINS = (
 )
 # Parse database configuration from $DATABASE_URL
 
+'''
 import dj_database_url
 DATABASES = {
     'default':dj_database_url.config()
 }
 
+'''
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -33,6 +35,16 @@ DATABASES = {
     }
 }
 '''
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'd506nsovge5mik',
+    'HOST': 'ec2-54-243-241-23.compute-1.amazonaws.com',
+    'PORT': 5432,
+    'USER': 'tmsxuaukhryvxh',
+    'PASSWORD': 'R1uxH5gT_1Et_5pAc0gqh2lQv1'
+  }
+}
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
