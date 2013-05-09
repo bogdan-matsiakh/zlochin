@@ -104,17 +104,19 @@ body.show-discus #toggle_discus {
 }
 
 .info {
-	height: 400px;
+	
 }
 
 .map {
 	height: 600px;
 	display: block;
+	margin: 10px 0 0 0;
 }
 
 .footer {
-	height: 100px;
-	display: block;	
+	height: 60px;
+	display: block;
+	padding: 30px 0 0 0;	
 }
 
 #accordion {
@@ -145,7 +147,8 @@ body.show-discus #toggle_discus {
 }
 
 #disqus_thread {
-	position: absolute;
+	margin: 20px 0 0 0;
+	/*position: absolute;
 	top: 100%;
 	left: 0px;
 	padding: 1%;
@@ -156,7 +159,7 @@ body.show-discus #toggle_discus {
 	transition:top 1s;
 	-webkit-transition:top 1s;
 	-o-transition:top 1s;
-	-moz-transition:top 1s;
+	-moz-transition:top 1s;*/
 }
 
 #toggle_discus {
@@ -171,3 +174,21 @@ body.show-discus #toggle_discus {
 	cursor: pointer;
 }
 
+#menu-map {
+	
+}
+
+#menu-map select {
+	width: 230px;
+	margin: 0 20px 0 0;
+}
+
+option.green {
+	background: #00AA00;
+	color: #FFFFFF;
+}
+
+option.red {
+	background: #CC0000;
+	color: #FFFFFF;
+}
