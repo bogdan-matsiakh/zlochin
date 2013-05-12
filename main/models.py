@@ -4,15 +4,14 @@ from django.contrib import admin
 
 class Place(models.Model):
     title = models.CharField(max_length = 50)
-    population = models.IntegerField()
-    area = models.IntegerField()
+    population = models.IntegerField(blank=True, null=True)
+    area = models.IntegerField(blank=True, null=True)
     
     def __unicode__(self):
         return self.title
 
 class Crime(models.Model):
     CRIME_TITLES = (
-        ('time', 'ЧАС'),
         ('total', 'ВСЬОГО'),
         ('hard_vhard', 'ТЯЖКІ ТА О.ТЯЖКІ'),
         ('killing', 'ВБИВСТВО'),

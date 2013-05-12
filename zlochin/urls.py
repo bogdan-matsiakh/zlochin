@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 from main import views
+from api import views
 
 from django.conf.urls import patterns, include, url
 from django.conf import settings
@@ -24,6 +25,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    
+    # API
+    url(r'^api/places$', 'api.views.places'),
+    url(r'^api/crimes$', 'api.views.crimes'),
 )
 
 '''

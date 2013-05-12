@@ -2,19 +2,45 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Minimal Django File Upload Example</title>	
+		<title>Minimal Django File Upload Example</title>
+		
+		<style type="text/css">
+			#id_title,
+			label[for = "id_title"] {
+				display:none;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			function update() {
+				var form = document.getElementById('data_form'),
+					title = document.getElementById('id_title'),
+					select = document.getElementById('form_select');
+				
+				title.value = select.options[select.selectedIndex].value;
+			}
+			window.addEventListener('load', function () {
+				document.getElementById('form_select').addEventListener('change', update);
+				update();
+			})
+		</script>
 	</head>
 
 	<body>
-		<form enctype="multipart/form-data" method="post" action="/file">
-		   {% csrf_token %}   
-		   <table>
+		<form enctype="multipart/form-data" method="post" action="/file" id="data_form">
+		    {% csrf_token %}
+		    <select id="form_select">
+				{% for place in places %}
+					<option value="{{place.title}}">{{ place.title }}</option>
+				{% endfor %} 
+		    </select>
+		    <table>
 		       {{form.as_table}}
 		    </table>
 		    <input type="submit" value="Submit" id="Save"/>
 		</form>
 	</body>
-
+	
 </html> 
 
 
