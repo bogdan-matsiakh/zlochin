@@ -23,19 +23,25 @@ $(function() {
 	
 	// Main menu
 	$("#menu-main").click(function () {
-		$("#map-view").show();
-		$("#about-view").hide();
-		$("#contact-view").hide();
-		parser.refreshMap();
+		$("#about-view").fadeOut(500, function () {
+			$("#contact-view").fadeOut(500, function () {
+				$("#map-view").fadeIn(500);
+				parser.refreshMap();
+			});
+		});
 	});
 	$("#menu-about").click(function () {
-		$("#about-view").show();
-		$("#map-view").hide();
-		$("#contact-view").hide();
+		$("#map-view").fadeOut(500, function () {
+			$("#contact-view").fadeOut(500, function () {
+				$("#about-view").fadeIn(500);
+			});
+		});
 	});
 	$("#menu-contact").click(function () {
-		$("#contact-view").show();
-		$("#about-view").hide();
-		$("#map-view").hide();
+		$("#map-view").fadeOut(500, function () {
+			$("#about-view").fadeOut(500, function () {
+				$("#contact-view").fadeIn(500);
+			});
+		});
 	});
 });

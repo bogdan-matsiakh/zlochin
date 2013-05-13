@@ -64,7 +64,7 @@ body.show-discus #toggle_discus {
 	padding: 0;
 	border: solid 1px #00AA00;
 	border-top: none;
-	height: 70px;
+	height: 40px;
 	overflow: hidden;
 	background: #DDFFDD;
 	
@@ -81,7 +81,7 @@ body.show-discus #toggle_discus {
 	padding: 0;
 	width: 150px;
 	list-style: none;
-	line-height: 70px;
+	line-height: 40px;
 	display: inline-block;
 }
 
@@ -90,13 +90,13 @@ body.show-discus #toggle_discus {
 	padding: 0;
 	width: 100%;
 	text-align: center;
-	height: 70px;
-	line-height: 70px;
+	height: 40px;
+	line-height: 40px;
 	text-decoration: none;
 	display: block;
 	color: #000000;
 	font-family: Comic Sans MS;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .head .menu ul li a:hover {
