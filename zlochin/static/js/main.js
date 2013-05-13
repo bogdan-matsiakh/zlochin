@@ -20,4 +20,22 @@ $(function() {
 	})
 	
 	parser.init();
+	
+	// Main menu
+	$("#menu-main").click(function () {
+		$("#map-view").show();
+		$("#about-view").hide();
+		$("#contact-view").hide();
+		parser.refreshMap();
+	});
+	$("#menu-about").click(function () {
+		$("#about-view").show();
+		$("#map-view").hide();
+		$("#contact-view").hide();
+	});
+	$("#menu-contact").click(function () {
+		$("#contact-view").show();
+		$("#about-view").hide();
+		$("#map-view").hide();
+	});
 });
