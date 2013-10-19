@@ -1,0 +1,141 @@
+Y:
+3   1000...50000 
+5   1000...50000 
+6   -20...2
+7   2000...20000
+8
+
+https://www.google.com/fusiontables/DataSource?docid=1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I#map:id=4
+-------------------3-Y3T4-http://goo.gl/2dnk5----------------------------------------------------------
+<div class='googft-info-window' style='font-family:sans-serif;width:500px;'>
+<b>Адмін. одиниця:</b> {1}, стан на 2011 р.<hr>
+<b>Усього зареєстровано злочинів:</b> {3} <i>(станом на 2011)</i><br>
+<!--<b>Усього зареєстровано злочинів:</b> {4} <i>(станом на 2012)</i><br>-->
+<!--<b>Динаміка злочинності:</b> {5}%<br>-->
+<br /><font size="1" color="#666666" text-align="right">Дані отримано з сайту МВС, станом на 20.11.2012</font><br>
+<a href="http://zloch.in.ua" target="_blank">Zloch.in.ua</a> | 
+Лінк на карту: <a href="http://{3url}" target="_blank">{3url}</a><br>
+Код на сайт (зеленим) <font size="1">в разі потреби відкорегуйте висоту/ширину</font><br>
+<nobr><font size="1" color="green">&lt;iframe  width="100%" height="600" scrolling="no" frameborder="no" src="http://{3url}"&gt;&lt;/iframe&gt;</font></nobr>
+</div>
+
+
+https://www.google.com/fusiontables/DataSource?docid=1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I#map:id=6
+-------------------4-Y5T6-http://goo.gl/AQKIB-----------------------------------------------------------
+<div class='googft-info-window' style='font-family:sans-serif;width:500px;'>
+<b>Адмін. одиниця:</b> {1}, стан на 2012 р.<hr>
+<!--<b>Усього зареєстровано злочинів:</b> {3} <i>(станом на 2011)</i><br>-->
+<b>Усього зареєстровано злочинів:</b> {4} <i>(станом на 2012)</i><br>
+<!--<b>Динаміка злочинності:</b> {5}%<br>-->
+<br /><font size="1" color="#666666" text-align="right">Дані отримано з сайту МВС, станом на 20.11.2012</font><br>
+<a href="http://zloch.in.ua" target="_blank">Zloch.in.ua</a> | 
+Лінк на карту: <a href="http://{4url}" target="_blank">{4url}</a><br>
+Код на сайт (зеленим) <font size="1">в разі потреби відкорегуйте висоту/ширину</font><br>
+<nobr><font size="1" color="green">&lt;iframe  width="100%" height="600" scrolling="no" frameborder="no" src="http://{4url}"&gt;&lt;/iframe&gt;</font></nobr>
+</div>
+
+
+https://www.google.com/fusiontables/DataSource?docid=1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I#map:id=7
+-------------------5-Y6T7-http://goo.gl/uHXVm-----------------------------------------------------------
+<div class='googft-info-window' style='font-family:sans-serif;width:500px;'>
+<b>Адмін. одиниця:</b> {1}, динаміка 2011/2012 р.<hr>
+<b>Усього зареєстровано злочинів:</b> {3} <i>(станом на 2011)</i><br>
+<b>Усього зареєстровано злочинів:</b> {4} <i>(станом на 2012)</i><br>
+<b>Динаміка злочинності:</b> {5}%<br>
+<br /><font size="1" color="#666666" text-align="right">Дані отримано з сайту МВС, станом на 20.11.2012</font><br>
+<a href="http://zloch.in.ua" target="_blank">Zloch.in.ua</a> | 
+Лінк на карту: <a href="http://{5url}" target="_blank">{5url}</a><br>
+Код на сайт (зеленим) <font size="1">в разі потреби відкорегуйте висоту/ширину</font><br>
+<nobr><font size="1" color="green">&lt;iframe  width="100%" height="600" scrolling="no" frameborder="no" src="http://{5url}"&gt;&lt;/iframe&gt;</font></nobr>
+</div>
+
+
+
+
+
+
+https://www.google.com/fusiontables/DataSource?docid=1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I#map:id=8
+-------------------6-Y7T8-http://goo.gl/zIXT3----------------------------------------------------------
+<div class='googft-info-window' style='font-family:sans-serif;width:500px;'>
+<b>Адмін. одиниця:</b> {1}, стан на 2011 р.<hr>
+<b>Тяжких та особливо тяжких:</b> {6} <i>(станом на 2011)</i><br>
+<!--<b>Тяжких та особливо тяжких:</b> {7} <i>(станом на 2012)</i><br>-->
+<!--<b>Динаміка тяжких та особливо тяжких:</b> {8}%<br>-->
+<br /><font size="1" color="#666666" text-align="right">Дані отримано з сайту МВС, станом на 20.11.2012</font><br>
+<a href="http://zloch.in.ua" target="_blank">Zloch.in.ua</a> | 
+Лінк на карту: <a href="http://{6url}" target="_blank">{6url}</a><br>
+Код на сайт (зеленим) <font size="1">в разі потреби відкорегуйте висоту/ширину</font><br>
+<nobr><font size="1" color="green">&lt;iframe  width="100%" height="600" scrolling="no" frameborder="no" src="http://{6url}"&gt;&lt;/iframe&gt;</font></nobr>
+</div>
+
+
+https://www.google.com/fusiontables/DataSource?docid=1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I#map:id=9
+-------------------7-Y8T9-goo.gl/lyXKV-----------------------------------------------------------
+<div class='googft-info-window' style='font-family:sans-serif;width:500px;'>
+<b>Адмін. одиниця:</b> {1}, стан на 2012 р.<hr>
+<!--<b>Тяжких та особливо тяжких:</b> {6} <i>(станом на 2011)</i><br>-->
+<b>Тяжких та особливо тяжких:</b> {7} <i>(станом на 2012)</i><br>
+<!--<b>Динаміка тяжких та особливо тяжких:</b> {8}%<br>-->
+<br /><font size="1" color="#666666" text-align="right">Дані отримано з сайту МВС, станом на 20.11.2012</font><br>
+<a href="http://zloch.in.ua" target="_blank">Zloch.in.ua</a> | 
+Лінк на карту: <a href="http://{7url}" target="_blank">{7url}</a><br>
+Код на сайт (зеленим) <font size="1">в разі потреби відкорегуйте висоту/ширину</font><br>
+<nobr><font size="1" color="green">&lt;iframe  width="100%" height="600" scrolling="no" frameborder="no" src="http://{7url}"&gt;&lt;/iframe&gt;</font></nobr>
+</div>
+
+
+
+https://www.google.com/fusiontables/DataSource?docid=1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I&pli=1#map:id=11
+-------------------13-Y10T11-goo.gl/cAabh----------------------------------------------------------
+<div class='googft-info-window' style='font-family:sans-serif;width:500px;'>
+<b>Адмін. одиниця:</b> {1}, динаміка 2011/2012 р.<hr>
+<b>Розслідувано злочинів (розкрито):</b> {11} <i>(станом на 2011)</i><br>
+<b>Розслідувано злочинів (розкрито):</b> {12} <i>(станом на 2012)</i><br>
+<b>Динаміка розслідуваних злочинів (розкрито):</b> {13}%<br>
+<br /><font size="1" color="#666666" text-align="right">Дані отримано з сайту МВС, станом на 20.11.2012</font><br>
+<a href="http://zloch.in.ua" target="_blank">Zloch.in.ua</a> | 
+Лінк на карту: <a href="http://{13url}" target="_blank">{13url}</a><br>
+Код на сайт (зеленим) <font size="1">в разі потреби відкорегуйте висоту/ширину</font><br>
+<nobr><font size="1" color="green">&lt;iframe  width="100%" height="600" scrolling="no" frameborder="no" src="http://{13url}"&gt;&lt;/iframe&gt;</font></nobr>
+</div>
+
+
+
+
+
+https://www.google.com/fusiontables/DataSource?docid=1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I&pli=1#map:id=12
+-------------------32-Y11T12-http://goo.gl/oRhRQ----------------------------------------------------------
+<div class='googft-info-window' style='font-family:sans-serif;width:500px;'>
+<b>Адмін. одиниця:</b> {1}, стан на 2012 р.<hr>
+<b>Злочини проти власності:</b> {32} <i>(станом на 2012)</i><br>
+<!--<b>Питома вага, %:</b> {33}%<br>-->
+<br /><font size="1" color="#666666" text-align="right">Дані отримано з сайту МВС, станом на 20.11.2012</font><br>
+<a href="http://zloch.in.ua" target="_blank">Zloch.in.ua</a> | 
+Лінк на карту: <a href="http://{32url}" target="_blank">{32url}</a><br>
+Код на сайт (зеленим) <font size="1">в разі потреби відкорегуйте висоту/ширину</font><br>
+<nobr><font size="1" color="green">&lt;iframe  width="100%" height="600" scrolling="no" frameborder="no" src="http://{32url}"&gt;&lt;/iframe&gt;</font></nobr>
+</div>
+
+
+https://www.google.com/fusiontables/DataSource?docid=1JLNhoP4rNdnGHk6UTGeVAqkivHdfSfckO-PaN8I&pli=1#map:id=13
+-------------------33-Y12T13-http://goo.gl/baeEt----------------------------------------------------------
+<div class='googft-info-window' style='font-family:sans-serif;width:500px;'>
+<b>Адмін. одиниця:</b> {1}, питома вага на 2012 р.<hr>
+<b>Злочини проти власності:</b> {32} <i>(станом на 2012)</i><br>
+<b>Питома вага, %:</b> {33}%<br>
+<br /><font size="1" color="#666666" text-align="right">Дані отримано з сайту МВС, станом на 20.11.2012</font><br>
+<a href="http://zloch.in.ua" target="_blank">Zloch.in.ua</a> | 
+Лінк на карту: <a href="http://{33url}" target="_blank">{33url}</a><br>
+Код на сайт (зеленим) <font size="1">в разі потреби відкорегуйте висоту/ширину</font><br>
+<nobr><font size="1" color="green">&lt;iframe  width="100%" height="600" scrolling="no" frameborder="no" src="http://{33url}"&gt;&lt;/iframe&gt;</font></nobr>
+</div>
+
+
+
+
+
+
+
+
+
+

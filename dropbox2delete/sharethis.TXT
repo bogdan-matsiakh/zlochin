@@ -1,0 +1,27 @@
+
+
+<!-- sharethis head -->
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "d2a1530d-380a-4793-9fd8-e4f2027fa6c0", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<!-- sharethis head END -->
+
+
+
+
+
+
+<!-- sharethis body -->
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_googleplus_large' displayText='Google +'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_odnoklassniki_large' displayText='Odnoklassniki'></span>
+<span class='st_vkontakte_large' displayText='Vkontakte'></span>
+<span class='st_livejournal_large' displayText='LiveJournal'></span>
+<span class='st_linkedin_large' displayText='LinkedIn'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+<span class='st_email_large' displayText='Email'></span>
+<span class='st_sharethis_large' displayText='ShareThis'></span>
+<!-- sharethis body END-->
+
+

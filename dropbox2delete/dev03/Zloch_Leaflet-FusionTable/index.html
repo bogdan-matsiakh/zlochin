@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet debug page</title>
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css" /><![endif]-->
+	<script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://danzel.github.io/Leaflet.markercluster/example/screen.css" />
+
+	<link rel="stylesheet" href="http://danzel.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+	<link rel="stylesheet" href="http://danzel.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="../dist/MarkerCluster.Default.ie.css" /><![endif]-->
+	<script src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+	
+	<script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.388.js"></script>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div id="map"></div>
+	<span>Mouse over a cluster to see the bounds of its children and click a cluster to zoom to those bounds</span>
+	<script type="text/javascript">
+	
+	var sqlQuery = "https://www.googleapis.com/fusiontables/v1/query?sql=SELECT * FROM 1pqiFEgmY_pPyXwFjzAZ7qzfZPScKlAMbB_c4GFA&key=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I&callback=?";
+
+	$.ajax({
+		url: sqlQuery,
+		dataType: 'jsonp',
+		success: function (data) {
+			continueExec(data);
+		}
+    });
+	
+	
+	function continueExec(data) {
+		var addressPoints = data['rows'];
+		
+		var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png',
+			cloudmadeAttribution = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade, Points &copy 2012 LINZ',
+			cloudmade = L.tileLayer(cloudmadeUrl, {attribution: cloudmadeAttribution}),
+			latlng = L.latLng(50.453132, 30.517960);
+
+		var map = L.map('map', {center: latlng, maxZoom: 17, zoom: 11, layers: [cloudmade]});
+
+		var markers = L.markerClusterGroup({maxClusterRadius: 20, animateAddingMarkers: true, spiderfyOnMaxZoom: true, disableClusteringAtZoom: 15});
+		
+		for (var i = 0; i < addressPoints.length; i++) {
+			var a = addressPoints[i];
+			var title = a[0];
+			var latitude = a[1], longitude = a[2];
+			if (!isNaN(latitude) && !isNaN(longitude)) {
+				var marker = new L.CircleMarker(new L.LatLng(latitude, longitude), { title: title, color: 'darkgreen', fillColor: 'green', fillOpacity: 0.8 });
+				marker.setRadius(5);
+				var popup = "";
+				for (var j=4; j<a.length; j++) {
+					if (+a[j]!=0) {
+						popup+= data['columns'][j];
+						popup+= ": ";
+						popup+= a[j];
+						popup+= "<br/>";
+					}
+				}
+				marker.bindPopup(popup);
+				markers.addLayer(marker);
+			}
+		}
+
+		map.addLayer(markers);
+	}
+
+	</script>
+</body>
+</html>

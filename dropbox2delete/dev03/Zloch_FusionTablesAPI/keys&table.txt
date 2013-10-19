@@ -1,0 +1,7 @@
+key=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I
+
+table=1dxkUZjFnfdHTUyZKLw-8__lcoaI0tll0tebMgWs
+
+https://www.googleapis.com/fusiontables/v1/query?sql=SELECT * FROM 1KxVV0wQXhxhMScSDuqr-0Ebf0YEt4m4xzVplKd4&key=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I
+
+https://www.googleapis.com/fusiontables/v1/query?sql=SELECT '211' FROM 1dxkUZjFnfdHTUyZKLw-8__lcoaI0tll0tebMgWs&key=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I

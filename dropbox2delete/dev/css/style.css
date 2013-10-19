@@ -1,0 +1,223 @@
+.affectless-link {
+    text-decoration: none
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana;
+	font-size: 14px;
+}
+
+h3.green {
+	background-color: #EFE;
+	background-image: none;
+}
+
+h3.red {
+	background-color: #FEE;
+	background-image: none;
+}
+
+h3.red.green {
+	background-color: #FFD;
+	background-image: none;
+}
+
+body.show-discus #disqus_thread {
+	top: 0%;
+}
+
+body.show-discus #toggle_discus {
+	color:#ffe;
+	background-color:#0a0;
+}
+
+.main {
+}
+
+.header {
+    width: 1000px;
+    left: 50%;
+    margin-left: -500px;
+    position: absolute;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.475);
+    height: 121px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+    .h-left-part {
+        display: inline-block;
+        width: 200px;
+        padding: 10px
+    }
+
+        .logotype {
+            width: 200px;
+            height: 101px;
+            background: url(../images/logo.png)
+        }
+
+    .h-right-part {
+        display: inline-block;
+        width: 755px;
+        vertical-align: top;
+        padding: 5px 10px 0 10px
+    }
+
+    .menu {
+        margin-bottom: 10px
+    }
+
+        .m-item {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.85);
+            color: #323232;
+            padding: 10px;
+            width: 165px;
+            text-align: center;
+            margin-top: 5px;
+            -webkit-user-select: none;
+            cursor: pointer
+        }
+
+            .m-item:hover {
+                background: rgba(204, 204, 204, 0.95)
+            }
+
+            .m-item:active {
+                backgrond: rgb(204, 204, 204)
+            }
+
+    .selectors {
+        margin-top: 20px
+    }
+
+.content-wrap {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 10px
+}
+.about  {
+  padding-top: 20px;
+}
+.contacts  {
+  padding-top: 100px;
+}
+.blog  {
+  padding-top: 110px;
+}
+.infographics {
+  padding-top: 110px;
+}
+
+
+.sharethis {
+	position   : fixed;
+	top        : 50px;
+	right      : 20px;
+	width      : 40px;
+  display    : block;
+}
+
+.info {
+  position      : relative;
+  z-index       : 3;
+  w_idth         : 800px;
+  top           : -25px;
+  left          : 40px;
+}
+
+.map {
+  top: -120px;
+	height: 650px; // висоту карти треба змінювати джава скриптом, бо ламається!! а пікселях все ОК!
+	display: block;
+	margin: 0 0 0 0;
+}
+
+.footer {
+	height: 60px;
+	display: block;
+	padding: 30px 0 0 0;	
+}
+
+#accordion {
+	font-size: 12px;
+}
+
+#accordion a {
+	line-height: 20px;
+	padding: 3px;
+}
+
+#accordion a.selected {
+	background: #0A0;
+	color: white;
+	text-decoration: none;
+}
+
+#accordion .margin-bottom {
+	margin-bottom: 5px;
+}
+
+#accordion .margin-left {
+	margin-left: 20px;
+}
+
+#templates {
+	display :none;
+}
+
+#disqus_thread {
+	margin: 20px 0 0 0;
+	/*position: absolute;
+	top: 100%;
+	left: 0px;
+	padding: 1%;
+	width: 68%;
+	height: 98%;
+	background-color: #EEE;
+	
+	transition:top 1s;
+	-webkit-transition:top 1s;
+	-o-transition:top 1s;
+	-moz-transition:top 1s;*/
+}
+
+#toggle_discus {
+	position: fixed;
+	right: 30%;
+	bottom: 0px;
+	width: 100px;
+	z-index: 1;
+	border: 1px solid #999;
+	border-radius: 3px;
+	background-color: #FFE;
+	cursor: pointer;
+}
+
+#menu-map {
+	
+}
+
+#menu-map select {
+	width: 248px;
+	margin: 0 5px 0 0;
+    height: 35px
+}
+
+    #menu-map select:last-child {
+        margin-right: 0
+    }
+
+option.green {
+	background: #00AA00;
+	color: #FFFFFF;
+}
+
+option.red {
+	background: #CC0000;
+	color: #FFFFFF;
+}

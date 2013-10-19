@@ -103,8 +103,9 @@ body.show-discus #toggle_discus {
 	background: #FFFFCC;
 }
 
-.info {
-	
+.right-col {
+	width: 380px;
+	float: right;
 }
 
 .map {
