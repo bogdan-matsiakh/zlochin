@@ -1,0 +1,117 @@
+﻿<html>
+<head>
+    <title>Demo</title>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=geometry"></script>
+	<link rel="stylesheet" href="http://leafletjs.com/dist/leaflet.css" />
+	<script type="text/javascript" src="jquery-2.0.3.js"></script>
+	<script src="http://leafletjs.com/dist/leaflet.js"></script>
+    <script type="text/javascript">
+	var map;
+	var layers = {};
+	var currentLayer;
+	var minLayerForMarkers = 16;
+	
+	function initialize() {		
+		// Map stuff
+		map = L.map('map').setView([50.444388,30.565338], 11);
+		map.on('zoomend', function(e) {
+			if (map.getZoom() >= minLayerForMarkers) {
+				map.removeLayer(currentLayer);
+				console.log("TODO");
+			} else {
+				map.addLayer(currentLayer);
+			}
+		});
+		
+		L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+		}).addTo(map);		
+		
+		layers['mod'] = L.tileLayer('http://localhost:5353?colorScheme=mod&zoom={z}&x={x}&y={y}');
+		layers['mod'].addTo(map);
+		currentLayer = layers['mod'];
+		
+		// Adding listeners to filters
+		$("input:checkbox[name|='chk_group']").on('click', function() { 
+			console.log($(this));
+			//$(this)['id'];
+		});
+		
+		$("#filter-all").on('click', function() { 
+			if ($(this).is(':checked')){
+				$("input:checkbox[name|='chk_group']").attr('checked', false);
+			} else {
+				$("input:checkbox[name|='chk_group']").attr('checked', true);
+			}
+		});		
+	}
+
+    function changeColorScheme(control) {
+		map.removeLayer(currentLayer);
+		if (control.value == null) {
+			control.value = 'mod';
+		}
+		if (control.value in layers) {
+			if (map.getZoom() < minLayerForMarkers) {
+				map.addLayer(layers[control.value]);
+			}
+			currentLayer = layers[control.value];
+		} else {
+			var newLayer = L.tileLayer('http://localhost:5353?colorScheme=' + control.value + '&zoom={z}&x={x}&y={y}', {reuseTiles: true});
+			if (map.getZoom() < minLayerForMarkers) {
+				newLayer.addTo(map);
+			}
+			layers[control.value] = newLayer;
+			currentLayer = newLayer;
+		}
+	}
+	</script>
+	<style>
+	body {
+		font-family: Arial,Helvetica,Tahoma,Verdana,sans-serif;
+	}
+	label {
+		vertical-align: middle;
+		font-size: 11px;
+	}
+	</style>
+</head>
+<body onload="javascript:initialize();">
+
+<div id="map" style="float:left; width:80%; height:90%; border:solid 1px black;">&nbsp;</div>
+<div style="float:right;width:18%; vertical-align:top;">
+    <div style="float:left;">Color Schemes</div>
+    <div style="float:right;">
+        <select name="colorSchemes" id="colorSchemes" onchange="javascript:changeColorScheme(this);">
+            <option value="classic">classic</option>
+            <option value="fire">fire</option>
+            <option value="omg">omg</option>
+            <option value="pbj">pbj</option>
+            <option value="pgaitch">pgaitch</option>
+            <option value="mod">mod</option>
+            <option value="red">red</option>
+        </select>
+    </div>
+	<div style="clear:both">
+		<input type="checkbox" id="filter-all" name="chk_group" checked="checked"><label for="filter-all">Усе разом</label><br/>
+		<input type="checkbox" id="filter-1" name="chk_group" checked="checked"><label for="filter-1">Тяжкі та особливо тяжкі</label><br/>
+		<input type="checkbox" id="filter-2" name="chk_group" checked="checked"><label for="filter-2">Умисне тяжке тілесне ушкодження</label><br/>
+		<input type="checkbox" id="filter-3" name="chk_group" checked="checked"><label for="filter-3">Тяжке тілесне ушкодження із смертельним наслідком</label><br/>
+		<input type="checkbox" id="filter-4" name="chk_group" checked="checked"><label for="filter-4">Згвалтування</label><br/>
+		<input type="checkbox" id="filter-5" name="chk_group" checked="checked"><label for="filter-5">Крадіжка</label><br/>
+		<input type="checkbox" id="filter-6" name="chk_group" checked="checked"><label for="filter-6">Грабіж</label><br/>
+		<input type="checkbox" id="filter-7" name="chk_group" checked="checked"><label for="filter-7">Розбій</label><br/>
+		<input type="checkbox" id="filter-8" name="chk_group" checked="checked"><label for="filter-8">Вимагання</label><br/>
+		<input type="checkbox" id="filter-9" name="chk_group" checked="checked"><label for="filter-9">Шахрайство</label><br/>
+		<input type="checkbox" id="filter-10" name="chk_group" checked="checked"><label for="filter-10">Заволодіння транспортним засобом</label><br/>
+		<input type="checkbox" id="filter-11" name="chk_group" checked="checked"><label for="filter-11">Хуліганство</label><br/>
+	</div>
+</div>
+
+<div style="clear:both;"></div>
+</div>
+<div style="clear:both;"></div>
+
+</body>
+</html>

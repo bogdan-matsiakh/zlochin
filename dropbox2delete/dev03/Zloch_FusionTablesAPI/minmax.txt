@@ -1,0 +1,10 @@
+https://www.googleapis.com/fusiontables/v1/query?sql=SELECT '1', '3', SUM('3') AS 'lol' FROM 1dxkUZjFnfdHTUyZKLw-8__lcoaI0tll0tebMgWs WHERE '1' STARTS WITH 'm'&key=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I
+
+https://www.googleapis.com/fusiontables/v1/query?sql=SELECT MAXIMUM ('3') AS 'lol' FROM 1dxkUZjFnfdHTUyZKLw-8__lcoaI0tll0tebMgWs&key=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I
+
+https://www.googleapis.com/fusiontables/v1/query?sql=SELECT 'ALL' FROM 1jVFda3StdbpwegsObYb1__ZYOryZp03kU7OZhxI&key=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I
+
+
+
+
+https://www.googleapis.com/fusiontables/v1/query?sql=SELECT 'latitude', 'longitude','ALL' FROM 1pqiFEgmY_pPyXwFjzAZ7qzfZPScKlAMbB_c4GFA&key=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I
