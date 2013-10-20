@@ -1,5 +1,5 @@
 // Parse GET parameters with regular expression
-// index2.html?fusionTableUrl=1dxkUZjFnfdHTUyZKLw-8__lcoaI0tll0tebMgWs&geoColumn=210&dataColumn=6&apiKey=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I&zoom=6&lat=48.4&long=30.1&txt01
+// maps_pol.html?fusionTableUrl=1dxkUZjFnfdHTUyZKLw-8__lcoaI0tll0tebMgWs&geoColumn=210&dataColumn=6&apiKey=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I&zoom=6&lat=48.4&long=30.1&txt01='text text text'
 // urlParams = {
 //     fusionTableUrl = ...,
 //     geoColumn = 210,
@@ -8,7 +8,7 @@
 //     zoom = 6,
 //     lat = 48.4,
 //     long = 30.1,
-//     txt01 = 'sd;g;ajdgakl'
+//     txt01 = 'text text text'
 // }
 var urlParams;
 (window.onpopstate = function () {
