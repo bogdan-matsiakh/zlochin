@@ -60,23 +60,48 @@ body, html {
   <body>
     <div id="map-canvas" style="width:100%"></div>
 	<script type="text/javascript">
+
+	// Parse GET parameters with regular expression
+	// index2.html?fusionTableUrl=1dxkUZjFnfdHTUyZKLw-8__lcoaI0tll0tebMgWs&geoColumn=210&dataColumn=6&apiKey=AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I&zoom=6&lat=48.4&long=30.1
+	// urlParams = {
+	//     fusionTableUrl = ...,
+	//     geoColumn = 210,
+	//     dataColumn = 6,
+	//     apiKey = ...,
+	//     zoom = 6,
+	//     lat = 48.4,
+	//     long = 30.1,
+	// }
+	var urlParams;
+	(window.onpopstate = function () {
+		var match,
+			pl     = /\+/g,  // Regex for replacing addition symbol with a space
+			search = /([^&=]+)=?([^&]*)/g,
+			decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+			query  = window.location.search.substring(1);
+
+		urlParams = {};
+		while (match = search.exec(query))
+		   urlParams[decode(match[1])] = decode(match[2]);
+	})();
+
 	google.maps.event.addDomListener(window, 'load', initialize);
 	function initialize() {
 		showMap({
 			mapSettings: {
 				renderAt: 'map-canvas',
-				latitude: 48.4,
-				longitude: 30.1,
-				zoom: 6,
+				latitude: parseFloat(urlParams['lat']),
+				longitude: parseFloat(urlParams['long']),
+				zoom: parseInt(urlParams['zoom']),
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			},
 			fusionTable: {
-				url: '1dxkUZjFnfdHTUyZKLw-8__lcoaI0tll0tebMgWs',
-				geoColumn: '210',
-				dataColumn: '6',
-				apiKey: 'AIzaSyBBdl_Q24pPQvAxKNAcR3PxhEIyGqZoE-I'
+				url: urlParams['fusionTableUrl'],
+				geoColumn: urlParams['geoColumn'],
+				dataColumn: urlParams['dataColumn'],
+				apiKey: urlParams['apiKey']
 			},
-			colors: colorbrewer.RdYlGn['9'].reverse()	
+			colors: colorbrewer.RdYlGn['9'].reverse()
 		});
 	};
 	</script>
