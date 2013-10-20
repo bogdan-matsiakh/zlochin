@@ -8,10 +8,20 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
 
+	<script type="text/javascript" src="js/data/kyiv_2013_data.json"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=uk"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/parser.js"></script>
+    <script type="text/javascript" src="js/map-worker.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
+	
+	<script type="text/javascript" src="js/heatmap.js"></script>
+	<script type="text/javascript" src="js/heatmap-gmaps.js"></script>
+	
+    <script type="text/javascript" src="js/maps-cities-init.js"></script>
 
     <!-- google-analytics -->
     <script>
@@ -49,13 +59,68 @@
             <div class="selectors" id="menu-map"></div>
         </div>
     </div>
-    <div id="index-view">
+	<div class="menu-cities">
+		<div><center>Злочинність у Києві за період січень-серпень 2013 року</center></div>
+		<br />
 		<div>
-			<a href="maps-regions.html">GO TO MAPS WITH REGIONS</a>
+			Всього злочинів: <span id="crimes-count-0">?</span>
+		</div>
+		<br />
+		<div>
+			<input type="radio" name="city-menu" id="col1" />
+			<label for="col1">ТЯЖКІ ТА О.ТЯЖКІ (<span id="crimes-count-1">?</span>)</label>
 		</div>
 		<div>
-			<a href="maps-cities.html">GO TO MAPS WITH CITIES</a>
+			<input type="radio" name="city-menu" id="col2" />
+			<label for="col2">ВБИВСТВО (<span id="crimes-count-2">?</span>)</label>
 		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col3" />
+			<label for="col3">УМИСНЕ ТЯЖ ТІЛ УШКОДЖЕННЯ (<span id="crimes-count-3">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col4" />
+			<label for="col4">ТЯЖ ТІЛ УШКОДЖ ЗІ СМЕРТ. НАСЛ. (<span id="crimes-count-4">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col5" />
+			<label for="col5">ЗГВАЛТУВАННЯ (<span id="crimes-count-5">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col6" />
+			<label for="col6">КРАДІЖКА (<span id="crimes-count-6">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col7" />
+			<label for="col7">ГРАБІЖ (<span id="crimes-count-7">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col8" />
+			<label for="col8">РОЗБІЙ (<span id="crimes-count-8">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col9" />
+			<label for="col9">ВИМАГАННЯ (<span id="crimes-count-9">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col10" />
+			<label for="col10">ШАХРАЙСТВО (<span id="crimes-count-10">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col11" />
+			<label for="col11">ЗАВОЛОД Т/З (<span id="crimes-count-11">?</span>)</label>
+		</div>
+		<div>
+			<input type="radio" name="city-menu" id="col12" />
+			<label for="col12">ХУЛІГАНСТВО (<span id="crimes-count-12">?</span>)</label>
+		</div>
+	</div>
+    <div id="map-view">
+        <center>
+            <div class="info">
+            </div>
+        </center>
+        <div class="map" id="map"></div>
     </div>
     <div class="footer">
         <div id="disqus_thread"></div>

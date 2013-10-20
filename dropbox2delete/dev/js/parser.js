@@ -118,11 +118,18 @@ window.parser = (function () {
                             }).appendTo(select3);
                         });
 
+						$(select3).trigger('change');
+						
+						/*
+						// Commented 20.10.2013 because this code brokes map refresh
+						//		after menu interaction
+						
                         if (!Nav.hasValues("map") && !window.allowShowingMap) {
                             $(select3).trigger('change');
                         } else {
                             window.allowShowingMap = true;
                         }
+						*/
                     }
 
                 }

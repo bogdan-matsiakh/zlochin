@@ -1,15 +1,15 @@
 mapWorker = (function () {
-    var _townCenter = new google.maps.LatLng(48.518844877014486, 30.76445803124999),
+    var _countryCenter = new google.maps.LatLng(49.018844877014486, 31.36445803124999),
+		_countryZoom = 6,
         _map = null,
         _layer = null,
         _logoOverlay = null,
         _show = function (data) {
             //console.log('Showing map:', data);
-            _map = new google.maps.Map(document.getElementById('map'), {
-                center: _townCenter,
-                zoom: 6,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
+            _showMap({
+				center: _countryCenter,
+				zoom: _countryZoom
+			});
 
             Nav.clearHashParameterList();
             Nav.createNewHashParameter(data.hash_name);
@@ -32,6 +32,13 @@ mapWorker = (function () {
 
             // _showLogo();     // закоментували 20130901, бо в шапці і так є це лого!
             _showLegend();
+        },
+		_showMap = function (args) {
+            _map = new google.maps.Map(document.getElementById('map'), {
+                center: args.center,
+                zoom: args.zoom,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
         },
         _showLogo = function () {
             var div = document.createElement('div'),
@@ -56,8 +63,13 @@ mapWorker = (function () {
             img.style.width = '82';
             img.style.height = '91';
             div.appendChild(img);
-        };
+        },
+		_getMap = function () {
+			return _map;
+		};
     return {
-        show: _show
+        show: _show,
+		showMap: _showMap,
+		getMap: _getMap
     }
 })();

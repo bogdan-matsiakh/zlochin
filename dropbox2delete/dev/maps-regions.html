@@ -10,8 +10,13 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=uk"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/parser.js"></script>
+    <script type="text/javascript" src="js/map-worker.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
+    <script type="text/javascript" src="js/maps-regions-init.js"></script>
 
     <!-- google-analytics -->
     <script>
@@ -49,13 +54,22 @@
             <div class="selectors" id="menu-map"></div>
         </div>
     </div>
-    <div id="index-view">
-		<div>
-			<a href="maps-regions.html">GO TO MAPS WITH REGIONS</a>
-		</div>
-		<div>
-			<a href="maps-cities.html">GO TO MAPS WITH CITIES</a>
-		</div>
+    <div id="map-view">
+        <center>
+            <div class="info">
+            </div>
+        </center>
+        <div class="map" id="map"></div>
+    </div>
+    <div id="about-view" style="display: none;">
+        <iframe src="https://docs.google.com/document/d/1yonIY0Pe9c-YrFfi_Otq7UU7N_8EShZ3XDNZJgnpqMs/pub?embedded=true"
+                width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Завантаження...
+        </iframe>
+    </div>
+    <div id="contact-view" style="display: none;">
+        <iframe src="https://docs.google.com/forms/d/1hjjbe5q_3IJLx0NzEt-YdcRDGqx3mzofh6aBGMjglps/viewform?embedded=true"
+                width="100%" height="620" frameborder="0" marginheight="0" marginwidth="0">Завантаження...
+        </iframe>
     </div>
     <div class="footer">
         <div id="disqus_thread"></div>

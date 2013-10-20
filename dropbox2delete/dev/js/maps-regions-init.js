@@ -24,8 +24,12 @@ function loadList(data) {
 }
 
 $(function () {
+	parser.init();
     $.getScript('https://spreadsheets.google.com/feeds/list/0As9SVzApMBjodHNIVTRTM09nUFFtZzV5aXhDQzZTbnc/1/public/values?alt=json-in-script&callback=loadList');
 
+	/*
+	// Commented 20.10.2013 because this is unused code
+	
     $("#toggle_discus").click(function () {
         if ($(document.body).hasClass('show-discus')) {
             $(this).html('Показати коментарі');
@@ -35,10 +39,12 @@ $(function () {
             $(document.body).addClass('show-discus');
         }
     });
-
-    parser.init();
+	*/
 
     // Main menu
+	/*
+	// Commented 20.10.2013 because this is unused code
+	
     $("#menu-main").click(function () {
         $("#about-view").fadeOut(500, function () {
             $("#contact-view").fadeOut(500, function () {
@@ -61,6 +67,7 @@ $(function () {
             });
         });
     });
+	*/
 });
 
 (function () {
