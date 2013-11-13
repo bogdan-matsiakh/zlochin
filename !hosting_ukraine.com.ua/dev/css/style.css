@@ -66,7 +66,9 @@ body.show-discus #toggle_discus {
         vertical-align: top;
         padding: 5px 10px 0 10px
     }
-
+    .center {
+        text-align: center;
+    }
     .menu {
         margin-bottom: 10px
     }
