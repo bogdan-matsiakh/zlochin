@@ -45,10 +45,26 @@ $(function () {
 		return maxCount;
 	}
 	var map = mapWorker.getMap();
+	
+	google.maps.event.addListener(map, 'dragend', function () {
+		heatmap.draw();
+	});
+	
 	var heatmap = new HeatmapOverlay(map, {
-		"radius": 15,
-		"visible": true,
-		"opacity": 60
+		radius: 15,
+		visible: true,
+		opacity: 60,
+		legend: {
+            position: 'br',
+            title: 'Кількість злочинів'
+        },
+		"gradient": {
+			0.20: "rgb(0,0,255)",
+			0.40: "rgb(0,255,255)",
+			0.60: "rgb(0,255,0)",
+			0.80: "yellow",
+			1.00: "rgb(255,0,0)"
+		}
 	});
 	
 	for (i = 0; i <= 12; i++) {
