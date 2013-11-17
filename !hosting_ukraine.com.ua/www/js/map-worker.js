@@ -37,7 +37,49 @@ mapWorker = (function () {
             _map = new google.maps.Map(document.getElementById('map'), {
                 center: args.center,
                 zoom: args.zoom,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles: [{
+				featureType: "landscape.man_made",
+				elementType: "geometry.fill",
+				stylers: [{
+						//color: '#F4F6F6',
+						saturation: 0,
+						lightness: 60,
+						
+					}]
+				}, {
+					featureType: "road.highway",
+					elementType: "geometry.fill",
+					stylers: [{
+						color: '#F4EAA4'
+						
+						
+					}]
+				}, {
+					featureType: "landscape.natural",
+					elementType: "geometry.fill",
+					stylers: [{
+						lightness: 25
+						
+					}]	
+				},  {
+					featureType: "landscape.man_made",
+					elementType: "geometry.stroke",
+					stylers: [{
+						color: '#CDCDCB'
+						
+									
+						
+					}]
+				},  {
+					featureType: "all",
+					elementType: "geometry.fill",
+					stylers: [{
+						Lightness: 15
+						
+						
+					}]
+				}]
             });
         },
         _showLogo = function () {

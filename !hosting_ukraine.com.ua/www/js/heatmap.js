@@ -186,13 +186,14 @@
                 positionCss += 'right:'+offset+'px;';
             }
 
+			positionCss = "top:558px; right:0px;";
+			
             element = document.createElement("div");
-            element.style.cssText = "border-radius:5px;position:absolute;"+positionCss+"font-family:Helvetica; width:256px;z-index:10000000000; background:rgba(255,255,255,1);padding:10px;border:1px solid black;margin:0;";
-            element.innerHTML = "<h3 style='padding:0;margin:0;text-align:center;font-size:16px;'>"+title+"</h3>";
+            element.style.cssText = "border-radius:5px;position:fixed;"+positionCss+"font-family:Helvetica; width:256px;z-index:10000000000; background:rgba(255,255,255,1);padding:10px;border:1px solid black;margin:0;opacity:0.85";
+            element.innerHTML = "<h3 style='padding:0;margin:0;text-align:center;font-size:16px;color:#555555;'>"+title+"</h3>";
             // create gradient in canvas
             labelsEl.style.cssText = "position:relative;font-size:12px;display:block;list-style:none;list-style-type:none;margin:0;height:15px;";
             
-
             // create gradient element
             gradient = document.createElement("div");
             gradient.style.cssText = ["position:relative;display:block;width:256px;height:15px;border-bottom:1px solid black; background-image:url(",me.createGradientImage(),");"].join("");
@@ -388,7 +389,8 @@
 
                 element.appendChild(canvas);
                 if(me.get("legend")){
-                    element.appendChild(me.get("legend").getElement());
+                    //element.appendChild(me.get("legend").getElement());
+					$("#map-view").append(me.get("legend").getElement());
                 }
                 
                 // debugging purposes only
